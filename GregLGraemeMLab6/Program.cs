@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -14,14 +14,10 @@ namespace GregLGraemeMLab6
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            FormRunner(new LoginForm());
-        }
-        //Runs the form that you pass in
-        public static void FormRunner(Form form)
-        { 
-            Application.Run(form);
-        }
 
+            FormRunner(new LoginForm());
+
+            Application.Run(new OrderForm());
     }
 }
 

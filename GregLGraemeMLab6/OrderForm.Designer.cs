@@ -57,14 +57,14 @@ namespace GregLGraemeMLab6
             this.label2.Location = new System.Drawing.Point(96, 174);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 20);
+            this.label2.Size = new System.Drawing.Size(0, 17);
             this.label2.TabIndex = 1;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(73, 67);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 28);
+            this.textBox1.Size = new System.Drawing.Size(195, 24);
             this.textBox1.TabIndex = 11;
             // 
             // label1
@@ -73,17 +73,17 @@ namespace GregLGraemeMLab6
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(7, 67);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 24);
+            this.label1.Size = new System.Drawing.Size(45, 18);
             this.label1.TabIndex = 10;
             this.label1.Text = "Title:";
             // 
             // lstNonFiction
             // 
             this.lstNonFiction.FormattingEnabled = true;
-            this.lstNonFiction.ItemHeight = 22;
+            this.lstNonFiction.ItemHeight = 17;
             this.lstNonFiction.Location = new System.Drawing.Point(0, 111);
             this.lstNonFiction.Name = "lstNonFiction";
-            this.lstNonFiction.Size = new System.Drawing.Size(275, 224);
+            this.lstNonFiction.Size = new System.Drawing.Size(275, 208);
             this.lstNonFiction.TabIndex = 0;
             // 
             // groupBox3
@@ -105,7 +105,7 @@ namespace GregLGraemeMLab6
             // 
             this.textBox3.Location = new System.Drawing.Point(73, 60);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(195, 28);
+            this.textBox3.Size = new System.Drawing.Size(195, 24);
             this.textBox3.TabIndex = 13;
             // 
             // label4
@@ -114,17 +114,17 @@ namespace GregLGraemeMLab6
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(7, 64);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 24);
+            this.label4.Size = new System.Drawing.Size(45, 18);
             this.label4.TabIndex = 12;
             this.label4.Text = "Title:";
             // 
             // lstComicBooks
             // 
             this.lstComicBooks.FormattingEnabled = true;
-            this.lstComicBooks.ItemHeight = 22;
+            this.lstComicBooks.ItemHeight = 17;
             this.lstComicBooks.Location = new System.Drawing.Point(0, 111);
             this.lstComicBooks.Name = "lstComicBooks";
-            this.lstComicBooks.Size = new System.Drawing.Size(275, 224);
+            this.lstComicBooks.Size = new System.Drawing.Size(275, 208);
             this.lstComicBooks.TabIndex = 2;
             // 
             // btnAdd
@@ -157,14 +157,15 @@ namespace GregLGraemeMLab6
             this.btnCheckOut.TabIndex = 9;
             this.btnCheckOut.Text = "&Check Out";
             this.btnCheckOut.UseVisualStyleBackColor = false;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // lstFiction
             // 
             this.lstFiction.FormattingEnabled = true;
-            this.lstFiction.ItemHeight = 22;
+            this.lstFiction.ItemHeight = 17;
             this.lstFiction.Location = new System.Drawing.Point(0, 111);
             this.lstFiction.Name = "lstFiction";
-            this.lstFiction.Size = new System.Drawing.Size(275, 224);
+            this.lstFiction.Size = new System.Drawing.Size(275, 208);
             this.lstFiction.TabIndex = 1;
             // 
             // label3
@@ -173,7 +174,7 @@ namespace GregLGraemeMLab6
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(7, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 24);
+            this.label3.Size = new System.Drawing.Size(45, 18);
             this.label3.TabIndex = 11;
             this.label3.Text = "Title:";
             // 
@@ -181,7 +182,7 @@ namespace GregLGraemeMLab6
             // 
             this.textBox2.Location = new System.Drawing.Point(73, 64);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(195, 28);
+            this.textBox2.Size = new System.Drawing.Size(195, 24);
             this.textBox2.TabIndex = 12;
             // 
             // groupBox2
@@ -220,14 +221,13 @@ namespace GregLGraemeMLab6
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(200, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(585, 29);
+            this.label5.Size = new System.Drawing.Size(469, 24);
             this.label5.TabIndex = 10;
             this.label5.Text = "Please choose from our award winning selection!";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // OrderForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSalmon;
             this.ClientSize = new System.Drawing.Size(982, 503);

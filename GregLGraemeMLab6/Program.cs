@@ -14,10 +14,13 @@ namespace GregLGraemeMLab6
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             FormRunner(new LoginForm());
-
-            Application.Run(new OrderForm());
+        }
+        //Runs the form that you pass in
+        public static void FormRunner(Form form)
+        {
+            Application.Run(form);
+        }
     }
 }
 

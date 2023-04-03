@@ -19,13 +19,14 @@ namespace GregLGraemeMLab6
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // 
-
+            //
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void btnCheckOut_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            CheckoutForm checkoutForm = new CheckoutForm();
+            checkoutForm.ShowDialog();
         }
     }
 }

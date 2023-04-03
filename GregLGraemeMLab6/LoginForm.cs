@@ -34,10 +34,14 @@ namespace GregLGraemeMLab6
             if (ValidateCredentials(adminUser, enteredUsername, enteredPassword) || ValidateCredentials(customerUser, enteredUsername, enteredPassword))
             {
                 MessageBox.Show("Login successful!");
+                OrderForm orderForm = new OrderForm();
+                this.Hide(); // hide the LoginForm
+                orderForm.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Invalid username or password.");
+
             }
         }
         //Validates the username and password

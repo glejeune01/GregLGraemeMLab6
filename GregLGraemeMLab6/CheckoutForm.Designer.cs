@@ -102,9 +102,9 @@ namespace GregLGraemeMLab6
             // 
             this.button1.BackColor = System.Drawing.Color.IndianRed;
             this.button1.ForeColor = System.Drawing.Color.MintCream;
-            this.button1.Location = new System.Drawing.Point(397, 395);
+            this.button1.Location = new System.Drawing.Point(420, 395);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 61);
+            this.button1.Size = new System.Drawing.Size(149, 61);
             this.button1.TabIndex = 5;
             this.button1.Text = "&Confirm Order";
             this.button1.UseVisualStyleBackColor = false;
@@ -113,9 +113,9 @@ namespace GregLGraemeMLab6
             // 
             this.button2.BackColor = System.Drawing.Color.IndianRed;
             this.button2.ForeColor = System.Drawing.Color.MintCream;
-            this.button2.Location = new System.Drawing.Point(171, 395);
+            this.button2.Location = new System.Drawing.Point(217, 395);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(183, 61);
+            this.button2.Size = new System.Drawing.Size(149, 61);
             this.button2.TabIndex = 6;
             this.button2.Text = "&Remove Item";
             this.button2.UseVisualStyleBackColor = false;

@@ -62,7 +62,7 @@ namespace GregLGraemeMLab6
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 44);
+            this.textBox1.Location = new System.Drawing.Point(73, 67);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(195, 28);
             this.textBox1.TabIndex = 11;
@@ -71,7 +71,7 @@ namespace GregLGraemeMLab6
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(7, 44);
+            this.label1.Location = new System.Drawing.Point(7, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 24);
             this.label1.TabIndex = 10;
@@ -81,7 +81,7 @@ namespace GregLGraemeMLab6
             // 
             this.lstNonFiction.FormattingEnabled = true;
             this.lstNonFiction.ItemHeight = 22;
-            this.lstNonFiction.Location = new System.Drawing.Point(0, 88);
+            this.lstNonFiction.Location = new System.Drawing.Point(0, 111);
             this.lstNonFiction.Name = "lstNonFiction";
             this.lstNonFiction.Size = new System.Drawing.Size(275, 224);
             this.lstNonFiction.TabIndex = 0;
@@ -92,7 +92,7 @@ namespace GregLGraemeMLab6
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.lstComicBooks);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(683, 45);
+            this.groupBox3.Location = new System.Drawing.Point(683, 66);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
@@ -103,7 +103,7 @@ namespace GregLGraemeMLab6
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(73, 37);
+            this.textBox3.Location = new System.Drawing.Point(73, 60);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(195, 28);
             this.textBox3.TabIndex = 13;
@@ -112,7 +112,7 @@ namespace GregLGraemeMLab6
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(7, 41);
+            this.label4.Location = new System.Drawing.Point(7, 64);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 24);
             this.label4.TabIndex = 12;
@@ -122,7 +122,7 @@ namespace GregLGraemeMLab6
             // 
             this.lstComicBooks.FormattingEnabled = true;
             this.lstComicBooks.ItemHeight = 22;
-            this.lstComicBooks.Location = new System.Drawing.Point(0, 88);
+            this.lstComicBooks.Location = new System.Drawing.Point(0, 111);
             this.lstComicBooks.Name = "lstComicBooks";
             this.lstComicBooks.Size = new System.Drawing.Size(275, 224);
             this.lstComicBooks.TabIndex = 2;
@@ -131,7 +131,7 @@ namespace GregLGraemeMLab6
             // 
             this.btnAdd.BackColor = System.Drawing.Color.IndianRed;
             this.btnAdd.ForeColor = System.Drawing.Color.MintCream;
-            this.btnAdd.Location = new System.Drawing.Point(80, 388);
+            this.btnAdd.Location = new System.Drawing.Point(80, 408);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(168, 68);
             this.btnAdd.TabIndex = 7;
@@ -141,7 +141,7 @@ namespace GregLGraemeMLab6
             // btnRemove
             // 
             this.btnRemove.BackColor = System.Drawing.Color.IndianRed;
-            this.btnRemove.Location = new System.Drawing.Point(408, 389);
+            this.btnRemove.Location = new System.Drawing.Point(408, 409);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(168, 68);
             this.btnRemove.TabIndex = 8;
@@ -151,7 +151,7 @@ namespace GregLGraemeMLab6
             // btnCheckOut
             // 
             this.btnCheckOut.BackColor = System.Drawing.Color.IndianRed;
-            this.btnCheckOut.Location = new System.Drawing.Point(735, 389);
+            this.btnCheckOut.Location = new System.Drawing.Point(735, 409);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(168, 68);
             this.btnCheckOut.TabIndex = 9;
@@ -162,7 +162,7 @@ namespace GregLGraemeMLab6
             // 
             this.lstFiction.FormattingEnabled = true;
             this.lstFiction.ItemHeight = 22;
-            this.lstFiction.Location = new System.Drawing.Point(0, 88);
+            this.lstFiction.Location = new System.Drawing.Point(0, 111);
             this.lstFiction.Name = "lstFiction";
             this.lstFiction.Size = new System.Drawing.Size(275, 224);
             this.lstFiction.TabIndex = 1;
@@ -171,7 +171,7 @@ namespace GregLGraemeMLab6
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(7, 44);
+            this.label3.Location = new System.Drawing.Point(7, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 24);
             this.label3.TabIndex = 11;
@@ -179,7 +179,7 @@ namespace GregLGraemeMLab6
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(73, 41);
+            this.textBox2.Location = new System.Drawing.Point(73, 64);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(195, 28);
             this.textBox2.TabIndex = 12;
@@ -190,7 +190,7 @@ namespace GregLGraemeMLab6
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.lstFiction);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(355, 45);
+            this.groupBox2.Location = new System.Drawing.Point(355, 66);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -205,7 +205,7 @@ namespace GregLGraemeMLab6
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lstNonFiction);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(27, 45);
+            this.groupBox1.Location = new System.Drawing.Point(27, 66);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -217,9 +217,10 @@ namespace GregLGraemeMLab6
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 21);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(200, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(422, 20);
+            this.label5.Size = new System.Drawing.Size(585, 29);
             this.label5.TabIndex = 10;
             this.label5.Text = "Please choose from our award winning selection!";
             this.label5.Click += new System.EventHandler(this.label5_Click);

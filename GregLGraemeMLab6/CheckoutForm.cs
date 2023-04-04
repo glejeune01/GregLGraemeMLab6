@@ -74,5 +74,10 @@ namespace GregLGraemeMLab6
                 }
             }
         }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            //
+        }
     }
 }

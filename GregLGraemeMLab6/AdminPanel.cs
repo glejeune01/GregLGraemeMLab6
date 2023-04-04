@@ -87,32 +87,67 @@ namespace GregLGraemeMLab6
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            Program.ExportBooks(filePath: "C:\\files\\books.txt", Program.bookArray);
+            // Show confirmation message box
+            string confirmTitle = "Confirmation Required!";
+            string confirmMsg = "Are you sure you would like to make this change?";
+            DialogResult result = MessageBox.Show(confirmMsg, confirmTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // If statement for result of save button answer
+            if (result == DialogResult.Yes)
+            {
+                // Update the books text file
+                string successTitle = "Success!";
+                string successMsg = "The Peoples Library has been updated.";
+                MessageBox.Show(successMsg, successTitle);
+                Program.ExportBooks(filePath: "C:\\files\\books.txt", Program.bookArray);
+            }
         }
 
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
+            // Check if the user has selected an item in the list box
+            if (lstAllTitles.SelectedItem == null)
+            {
+                string title = "Error!";
+                string msg = "Please select an item from the list and try again.";
+                MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // exit the method without doing anything else
+            }
+
             // Get the selected book from the list box
             Book selectedBook = lstAllTitles.SelectedItem as Book;
 
             // Find its index in the array
             int index = Array.IndexOf(Program.bookArray, selectedBook);
 
-            // Remove the book from the array
-            if (index >= 0)
-            {
-                Array.Copy(Program.bookArray, index + 1, Program.bookArray, index, Program.bookArray.Length - index - 1);
-                Array.Resize(ref Program.bookArray, Program.bookArray.Length - 1);
-            }
+            // Show a message box to confirm deletion
+            string title2 = "Attention!";
+            string msg2 = "Are you sure you would like to remove this item?";
+            DialogResult result = MessageBox.Show(msg2, title2, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Update the list box
-            lstAllTitles.Items.Clear();
-            foreach (Book newBook in Program.bookArray)
+            // If the user confirms deletion, remove the book from the array and the list box
+            if (result == DialogResult.Yes)
             {
-                lstAllTitles.Items.Add(ToString(newBook));
+                if (index >= 0)
+                {
+                    // Remove the book from the array
+                    Array.Copy(Program.bookArray, index + 1, Program.bookArray, index, Program.bookArray.Length - index - 1);
+                    Array.Resize(ref Program.bookArray, Program.bookArray.Length - 1);
+
+                    // Remove the book from the list box
+                    lstAllTitles.Items.Remove(selectedBook);
+
+                    // Update the list box
+                    lstAllTitles.Items.Clear();
+                    foreach (Book newBook in Program.bookArray)
+                    {
+                        lstAllTitles.Items.Add(ToString(newBook));
+                    }
+                }
             }
         }
+
 
         private string ToString(Book book) 
         {

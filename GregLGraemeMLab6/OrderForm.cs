@@ -78,7 +78,7 @@ namespace GregLGraemeMLab6
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string msgTitle = "Attention";
+            string msgTitle = "Attention!";
             string success = "Success!";
             Book selectedBook = lstFiction.SelectedItem as Book
                 ?? lstNonFiction.SelectedItem as Book

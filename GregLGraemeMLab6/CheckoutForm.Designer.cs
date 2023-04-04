@@ -35,7 +35,7 @@ namespace GregLGraemeMLab6
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.btnRemoveItem = new System.Windows.Forms.Button();
             this.lstCheckout = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -102,16 +102,17 @@ namespace GregLGraemeMLab6
             this.label5.TabIndex = 4;
             this.label5.Text = "Grand total:";
             // 
-            // button1
+            // btnConfirm
             // 
-            this.button1.BackColor = System.Drawing.Color.IndianRed;
-            this.button1.ForeColor = System.Drawing.Color.MintCream;
-            this.button1.Location = new System.Drawing.Point(472, 567);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 61);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "&Confirm Order";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnConfirm.BackColor = System.Drawing.Color.IndianRed;
+            this.btnConfirm.ForeColor = System.Drawing.Color.MintCream;
+            this.btnConfirm.Location = new System.Drawing.Point(472, 567);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(149, 61);
+            this.btnConfirm.TabIndex = 5;
+            this.btnConfirm.Text = "&Confirm Order";
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnRemoveItem
             // 
@@ -205,7 +206,7 @@ namespace GregLGraemeMLab6
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lstCheckout);
             this.Controls.Add(this.btnRemoveItem);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -230,7 +231,7 @@ namespace GregLGraemeMLab6
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnRemoveItem;
         private System.Windows.Forms.ListBox lstCheckout;
         private System.Windows.Forms.PictureBox pictureBox1;

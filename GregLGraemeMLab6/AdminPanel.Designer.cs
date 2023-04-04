@@ -48,22 +48,24 @@
             this.txtEditionEntry = new System.Windows.Forms.TextBox();
             this.txtPriceEntry = new System.Windows.Forms.TextBox();
             this.txtGenreEntry = new System.Windows.Forms.TextBox();
+            this.lblBookType = new System.Windows.Forms.Label();
+            this.cboBookTypeSelector = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lstAllTitles
             // 
             this.lstAllTitles.FormattingEnabled = true;
-            this.lstAllTitles.ItemHeight = 20;
+            this.lstAllTitles.ItemHeight = 17;
             this.lstAllTitles.Location = new System.Drawing.Point(428, 171);
             this.lstAllTitles.Margin = new System.Windows.Forms.Padding(4);
             this.lstAllTitles.Name = "lstAllTitles";
-            this.lstAllTitles.Size = new System.Drawing.Size(751, 444);
+            this.lstAllTitles.Size = new System.Drawing.Size(751, 429);
             this.lstAllTitles.TabIndex = 0;
             // 
             // btnAddEdit
             // 
-            this.btnAddEdit.Location = new System.Drawing.Point(235, 495);
+            this.btnAddEdit.Location = new System.Drawing.Point(245, 629);
             this.btnAddEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddEdit.Name = "btnAddEdit";
             this.btnAddEdit.Size = new System.Drawing.Size(112, 30);
@@ -97,70 +99,70 @@
             // lblCode
             // 
             this.lblCode.AutoSize = true;
-            this.lblCode.Location = new System.Drawing.Point(18, 175);
+            this.lblCode.Location = new System.Drawing.Point(28, 309);
             this.lblCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(52, 20);
+            this.lblCode.Size = new System.Drawing.Size(45, 17);
             this.lblCode.TabIndex = 5;
             this.lblCode.Text = "Code";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(18, 218);
+            this.lblTitle.Location = new System.Drawing.Point(28, 352);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(46, 20);
+            this.lblTitle.Size = new System.Drawing.Size(40, 17);
             this.lblTitle.TabIndex = 6;
             this.lblTitle.Text = "Title";
             // 
             // lblAuthor
             // 
             this.lblAuthor.AutoSize = true;
-            this.lblAuthor.Location = new System.Drawing.Point(18, 264);
+            this.lblAuthor.Location = new System.Drawing.Point(28, 398);
             this.lblAuthor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(64, 20);
+            this.lblAuthor.Size = new System.Drawing.Size(56, 17);
             this.lblAuthor.TabIndex = 7;
             this.lblAuthor.Text = "Author";
             // 
             // lblGenre
             // 
             this.lblGenre.AutoSize = true;
-            this.lblGenre.Location = new System.Drawing.Point(18, 310);
+            this.lblGenre.Location = new System.Drawing.Point(28, 444);
             this.lblGenre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(60, 20);
+            this.lblGenre.Size = new System.Drawing.Size(53, 17);
             this.lblGenre.TabIndex = 8;
             this.lblGenre.Text = "Genre";
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(18, 356);
+            this.lblPrice.Location = new System.Drawing.Point(28, 490);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(53, 20);
+            this.lblPrice.Size = new System.Drawing.Size(45, 17);
             this.lblPrice.TabIndex = 9;
             this.lblPrice.Text = "Price";
             // 
             // lblEdition
             // 
             this.lblEdition.AutoSize = true;
-            this.lblEdition.Location = new System.Drawing.Point(18, 401);
+            this.lblEdition.Location = new System.Drawing.Point(28, 535);
             this.lblEdition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEdition.Name = "lblEdition";
-            this.lblEdition.Size = new System.Drawing.Size(67, 20);
+            this.lblEdition.Size = new System.Drawing.Size(58, 17);
             this.lblEdition.TabIndex = 10;
             this.lblEdition.Text = "Edition";
             // 
             // lblStock
             // 
             this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(18, 447);
+            this.lblStock.Location = new System.Drawing.Point(28, 581);
             this.lblStock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(56, 20);
+            this.lblStock.Size = new System.Drawing.Size(48, 17);
             this.lblStock.TabIndex = 11;
             this.lblStock.Text = "Stock";
             // 
@@ -176,66 +178,90 @@
             // 
             // txtCodeEntry
             // 
-            this.txtCodeEntry.Location = new System.Drawing.Point(117, 171);
+            this.txtCodeEntry.Location = new System.Drawing.Point(127, 305);
             this.txtCodeEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodeEntry.Name = "txtCodeEntry";
-            this.txtCodeEntry.Size = new System.Drawing.Size(230, 27);
+            this.txtCodeEntry.Size = new System.Drawing.Size(230, 23);
             this.txtCodeEntry.TabIndex = 13;
             // 
             // txtTitleEntry
             // 
-            this.txtTitleEntry.Location = new System.Drawing.Point(117, 218);
+            this.txtTitleEntry.Location = new System.Drawing.Point(127, 352);
             this.txtTitleEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitleEntry.Name = "txtTitleEntry";
-            this.txtTitleEntry.Size = new System.Drawing.Size(230, 27);
+            this.txtTitleEntry.Size = new System.Drawing.Size(230, 23);
             this.txtTitleEntry.TabIndex = 14;
             // 
             // txtAuthorEntry
             // 
-            this.txtAuthorEntry.Location = new System.Drawing.Point(117, 260);
+            this.txtAuthorEntry.Location = new System.Drawing.Point(127, 394);
             this.txtAuthorEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtAuthorEntry.Name = "txtAuthorEntry";
-            this.txtAuthorEntry.Size = new System.Drawing.Size(230, 27);
+            this.txtAuthorEntry.Size = new System.Drawing.Size(230, 23);
             this.txtAuthorEntry.TabIndex = 15;
             // 
             // txtStockEntry
             // 
-            this.txtStockEntry.Location = new System.Drawing.Point(117, 443);
+            this.txtStockEntry.Location = new System.Drawing.Point(127, 577);
             this.txtStockEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtStockEntry.Name = "txtStockEntry";
-            this.txtStockEntry.Size = new System.Drawing.Size(230, 27);
+            this.txtStockEntry.Size = new System.Drawing.Size(230, 23);
             this.txtStockEntry.TabIndex = 16;
             // 
             // txtEditionEntry
             // 
-            this.txtEditionEntry.Location = new System.Drawing.Point(117, 398);
+            this.txtEditionEntry.Location = new System.Drawing.Point(127, 532);
             this.txtEditionEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtEditionEntry.Name = "txtEditionEntry";
-            this.txtEditionEntry.Size = new System.Drawing.Size(230, 27);
+            this.txtEditionEntry.Size = new System.Drawing.Size(230, 23);
             this.txtEditionEntry.TabIndex = 17;
             // 
             // txtPriceEntry
             // 
-            this.txtPriceEntry.Location = new System.Drawing.Point(117, 352);
+            this.txtPriceEntry.Location = new System.Drawing.Point(127, 486);
             this.txtPriceEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtPriceEntry.Name = "txtPriceEntry";
-            this.txtPriceEntry.Size = new System.Drawing.Size(230, 27);
+            this.txtPriceEntry.Size = new System.Drawing.Size(230, 23);
             this.txtPriceEntry.TabIndex = 18;
             // 
             // txtGenreEntry
             // 
-            this.txtGenreEntry.Location = new System.Drawing.Point(117, 306);
+            this.txtGenreEntry.Location = new System.Drawing.Point(127, 440);
             this.txtGenreEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtGenreEntry.Name = "txtGenreEntry";
-            this.txtGenreEntry.Size = new System.Drawing.Size(230, 27);
+            this.txtGenreEntry.Size = new System.Drawing.Size(230, 23);
             this.txtGenreEntry.TabIndex = 19;
+            // 
+            // lblBookType
+            // 
+            this.lblBookType.AutoSize = true;
+            this.lblBookType.Location = new System.Drawing.Point(28, 235);
+            this.lblBookType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBookType.Name = "lblBookType";
+            this.lblBookType.Size = new System.Drawing.Size(85, 17);
+            this.lblBookType.TabIndex = 20;
+            this.lblBookType.Text = "Book Type";
+            // 
+            // cboBookTypeSelector
+            // 
+            this.cboBookTypeSelector.FormattingEnabled = true;
+            this.cboBookTypeSelector.Items.AddRange(new object[] {
+            "Fiction",
+            "Non Fiction",
+            "Comic Book"});
+            this.cboBookTypeSelector.Location = new System.Drawing.Point(127, 232);
+            this.cboBookTypeSelector.Name = "cboBookTypeSelector";
+            this.cboBookTypeSelector.Size = new System.Drawing.Size(230, 25);
+            this.cboBookTypeSelector.TabIndex = 21;
             // 
             // AdminPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1216, 720);
+            this.Controls.Add(this.cboBookTypeSelector);
+            this.Controls.Add(this.lblBookType);
             this.Controls.Add(this.txtGenreEntry);
             this.Controls.Add(this.txtPriceEntry);
             this.Controls.Add(this.txtEditionEntry);
@@ -287,5 +313,7 @@
         private System.Windows.Forms.TextBox txtEditionEntry;
         private System.Windows.Forms.TextBox txtPriceEntry;
         private System.Windows.Forms.TextBox txtGenreEntry;
+        private System.Windows.Forms.Label lblBookType;
+        private System.Windows.Forms.ComboBox cboBookTypeSelector;
     }
 }

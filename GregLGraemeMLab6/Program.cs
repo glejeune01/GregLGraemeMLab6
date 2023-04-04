@@ -33,24 +33,24 @@ namespace GregLGraemeMLab6
 
                     // Determine the type of book and create a corresponding instance
                     Book book;
-                    if (fields.Length == 5) // NonFiction or Fiction
+                    if (fields.Length == 6) // NonFiction or Fiction
                     {
                         if (fields[3] == "NonFiction")
                         {
-                            book = new NonFiction();
+                            book = new NonFiction { Stock = int.Parse(fields[5]) };
                         }
                         else if (fields[3] == "Fiction")
                         {
-                            book = new Fiction();
+                            book = new Fiction { Stock = int.Parse(fields[5])};
                         }
                         else
                         {
                             continue;
                         }
                     }
-                    else if (fields.Length == 6 && fields[3] == "ComicBook") // ComicBook
+                    else if (fields.Length == 7 && fields[3] == "ComicBook") // ComicBook
                     {
-                        book = new ComicBook { Edition = fields[5] };
+                        book = new ComicBook { Edition = fields[5], Stock = int.Parse(fields[6])};
                     }
                     else
                     {
@@ -61,7 +61,6 @@ namespace GregLGraemeMLab6
                     book.Author = fields[2];
                     book.Genre = fields[3];
                     book.Price = decimal.Parse(fields[4]);
-                    book.Stock = int.Parse(fields[5]);
 
                     Array.Resize(ref bookArray, bookArray.Length + 1);
                     bookArray[bookArray.Length - 1] = book;

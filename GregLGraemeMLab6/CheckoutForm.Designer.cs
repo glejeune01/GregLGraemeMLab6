@@ -43,6 +43,7 @@ namespace GregLGraemeMLab6
             this.lblTaxesTotals = new System.Windows.Forms.Label();
             this.lblShippingTotals = new System.Windows.Forms.Label();
             this.lblGrandTotals = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@ namespace GregLGraemeMLab6
             this.label1.Location = new System.Drawing.Point(21, 149);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 18);
+            this.label1.Size = new System.Drawing.Size(79, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Item(s):";
             // 
@@ -64,7 +65,7 @@ namespace GregLGraemeMLab6
             this.label2.Location = new System.Drawing.Point(21, 329);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 18);
+            this.label2.Size = new System.Drawing.Size(132, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Item(s) price:";
             // 
@@ -75,7 +76,7 @@ namespace GregLGraemeMLab6
             this.label3.Location = new System.Drawing.Point(21, 393);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 18);
+            this.label3.Size = new System.Drawing.Size(73, 24);
             this.label3.TabIndex = 2;
             this.label3.Text = "Taxes:";
             // 
@@ -86,7 +87,7 @@ namespace GregLGraemeMLab6
             this.label4.Location = new System.Drawing.Point(21, 457);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 18);
+            this.label4.Size = new System.Drawing.Size(153, 24);
             this.label4.TabIndex = 3;
             this.label4.Text = "Shipping costs:";
             // 
@@ -97,7 +98,7 @@ namespace GregLGraemeMLab6
             this.label5.Location = new System.Drawing.Point(21, 521);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 18);
+            this.label5.Size = new System.Drawing.Size(117, 24);
             this.label5.TabIndex = 4;
             this.label5.Text = "Grand total:";
             // 
@@ -126,11 +127,11 @@ namespace GregLGraemeMLab6
             // lstCheckout
             // 
             this.lstCheckout.FormattingEnabled = true;
-            this.lstCheckout.ItemHeight = 17;
+            this.lstCheckout.ItemHeight = 22;
             this.lstCheckout.Location = new System.Drawing.Point(207, 126);
             this.lstCheckout.Name = "lstCheckout";
             this.lstCheckout.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.lstCheckout.Size = new System.Drawing.Size(414, 174);
+            this.lstCheckout.Size = new System.Drawing.Size(414, 158);
             this.lstCheckout.TabIndex = 7;
             // 
             // pictureBox1
@@ -144,7 +145,7 @@ namespace GregLGraemeMLab6
             // 
             // lblItemPricesTotals
             // 
-            this.lblItemPricesTotals.BackColor = System.Drawing.Color.DarkSalmon;
+            this.lblItemPricesTotals.BackColor = System.Drawing.Color.Azure;
             this.lblItemPricesTotals.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblItemPricesTotals.Location = new System.Drawing.Point(207, 324);
             this.lblItemPricesTotals.Name = "lblItemPricesTotals";
@@ -153,7 +154,7 @@ namespace GregLGraemeMLab6
             // 
             // lblTaxesTotals
             // 
-            this.lblTaxesTotals.BackColor = System.Drawing.Color.DarkSalmon;
+            this.lblTaxesTotals.BackColor = System.Drawing.Color.Azure;
             this.lblTaxesTotals.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTaxesTotals.Location = new System.Drawing.Point(207, 388);
             this.lblTaxesTotals.Name = "lblTaxesTotals";
@@ -162,7 +163,7 @@ namespace GregLGraemeMLab6
             // 
             // lblShippingTotals
             // 
-            this.lblShippingTotals.BackColor = System.Drawing.Color.DarkSalmon;
+            this.lblShippingTotals.BackColor = System.Drawing.Color.Azure;
             this.lblShippingTotals.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblShippingTotals.Location = new System.Drawing.Point(207, 452);
             this.lblShippingTotals.Name = "lblShippingTotals";
@@ -171,19 +172,31 @@ namespace GregLGraemeMLab6
             // 
             // lblGrandTotals
             // 
-            this.lblGrandTotals.BackColor = System.Drawing.Color.DarkSalmon;
+            this.lblGrandTotals.BackColor = System.Drawing.Color.Azure;
             this.lblGrandTotals.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblGrandTotals.Location = new System.Drawing.Point(207, 516);
             this.lblGrandTotals.Name = "lblGrandTotals";
             this.lblGrandTotals.Size = new System.Drawing.Size(127, 29);
             this.lblGrandTotals.TabIndex = 16;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.IndianRed;
+            this.label6.Location = new System.Drawing.Point(20, 46);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(293, 29);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Thank you for shopping!";
+            // 
             // CheckoutForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSalmon;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(633, 640);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lblGrandTotals);
             this.Controls.Add(this.lblShippingTotals);
             this.Controls.Add(this.lblTaxesTotals);
@@ -223,5 +236,6 @@ namespace GregLGraemeMLab6
         private System.Windows.Forms.Label lblTaxesTotals;
         private System.Windows.Forms.Label lblShippingTotals;
         private System.Windows.Forms.Label lblGrandTotals;
+        private System.Windows.Forms.Label label6;
     }
 }

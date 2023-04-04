@@ -86,7 +86,8 @@ namespace GregLGraemeMLab6
                         updatedLines.Add(line);
                     }
                 }
-                File.WriteAllLines(@"C:\files\books.txt", updatedLines.ToArray());
+                // Write the updated book list to the file
+                File.WriteAllText(@"C:\files\books.txt", string.Join(Environment.NewLine, updatedLines));
             }
         }
     }

@@ -20,74 +20,96 @@ namespace GregLGraemeMLab6
 
         private void AdminPanel_Load(object sender, EventArgs e)
         {
-            // Read the contents of the books.txt file
-            string[] lines = File.ReadAllLines(@"C:\files\books.txt");
-
-            // Add each book to the lstAllTitles list box
-            foreach (string line in lines)
-            {
-                string[] fields = line.Split('|');
-                string bookInfo = string.Join(", ", fields);
-                lstAllTitles.Items.Add(bookInfo);
+            Program.bookArray = Program.ImportBooks(filePath: "C:\\files\\books.txt");
+            // Iterate through the bookArray and add each book to the appropriate listbox
+            foreach (Book book in Program.bookArray)
+            { 
+                lstAllTitles.Items.Add(book);
             }
         }
 
         private void BtnAddEdit_Click(object sender, EventArgs e)
         {
-            // Get values from text boxes
-            string code = txtCodeEntry.Text;
-            string title = txtTitleEntry.Text;
-            string author = txtAuthorEntry.Text;
-            string genre = txtGenreEntry.Text;
-            string price = txtPriceEntry.Text;
-            string edition = txtEditionEntry.Text;
-            string stock = txtStockEntry.Text;
+            if (cboBookTypeSelector.Text == "Comic Book")
+            {
+                Book newBook = new ComicBook
+                {
+                    // Get values from text boxes
+                    Code = int.Parse(txtCodeEntry.Text),
+                    Title = txtTitleEntry.Text,
+                    Author = txtAuthorEntry.Text,
+                    Genre = txtGenreEntry.Text,
+                    Price = decimal.Parse(txtPriceEntry.Text),
+                    Edition = txtEditionEntry.Text,
+                    Stock = int.Parse(txtStockEntry.Text)
+                };
+                Array.Resize(ref Program.bookArray, Program.bookArray.Length + 1);
+                Program.bookArray[Program.bookArray.Length - 1] = newBook;
+            }
+            else if (cboBookTypeSelector.Text == "Fiction")
+            {
+                Book newBook = new Fiction
+                {
+                    // Get values from text boxes
+                    Code = int.Parse(txtCodeEntry.Text),
+                    Title = txtTitleEntry.Text,
+                    Author = txtAuthorEntry.Text,
+                    Genre = txtGenreEntry.Text,
+                    Price = decimal.Parse(txtPriceEntry.Text),
+                    Stock = int.Parse(txtStockEntry.Text)
+                };
+                Array.Resize(ref Program.bookArray, Program.bookArray.Length + 1);
+                Program.bookArray[Program.bookArray.Length - 1] = newBook;
+            }
+            else if (cboBookTypeSelector.Text == "Non Fiction")
+            {
+                Book newBook = new NonFiction
+                {
+                    // Get values from text boxes
+                    Code = int.Parse(txtCodeEntry.Text),
+                    Title = txtTitleEntry.Text,
+                    Author = txtAuthorEntry.Text,
+                    Genre = txtGenreEntry.Text,
+                    Price = decimal.Parse(txtPriceEntry.Text),
+                    Stock = int.Parse(txtStockEntry.Text)
+                };
+                Array.Resize(ref Program.bookArray, Program.bookArray.Length + 1);
+                Program.bookArray[Program.bookArray.Length - 1] = newBook;
+            }
 
-            // Combine values into one string separated by commas
-            string newItem = string.Format("{0},{1},{2},{3},{4},{5},{6}", code, title, author, genre, price, edition, stock);
-
-            // Add new item to ListBox
-            lstAllTitles.Items.Add(newItem);
+            lstAllTitles.Items.Clear();
+            foreach(Book newBook in Program.bookArray)
+            {
+                lstAllTitles.Items.Add(newBook);
+            }
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            // Open the file for writing
-            using (StreamWriter writer = new StreamWriter("C:\\files\\books.txt", true))
-            {
-                // Get the book information from the text boxes
-                string code = txtCodeEntry.Text;
-                string title = txtTitleEntry.Text;
-                string author = txtAuthorEntry.Text;
-                string genre = txtGenreEntry.Text;
-                string price = txtPriceEntry.Text;
-                string edition = txtEditionEntry.Text;
-                string stock = txtStockEntry.Text;
-
-                // Write the book information to the file
-                writer.WriteLine($"{code}|{title}|{author}|{genre}|{price}|{edition}|{stock}");
-            }
+            Program.ExportBooks(filePath: "C:\\files\\books.txt", Program.bookArray);
         }
+
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            if (lstAllTitles.SelectedIndex != -1) // check if an item is selected
-            {
-                string selectedBook = lstAllTitles.SelectedItem.ToString();
-                lstAllTitles.Items.Remove(selectedBook); // remove from list box
+            // Get the selected book from the list box
+            Book selectedBook = lstAllTitles.SelectedItem as Book;
 
-                // remove from books.txt file
-                string[] lines = File.ReadAllLines(@"C:\files\books.txt");
-                List<string> updatedLines = new List<string>();
-                foreach (string line in lines)
-                {
-                    if (!line.StartsWith(selectedBook)) // skip the line with the selected book
-                    {
-                        updatedLines.Add(line);
-                    }
-                }
-                // Write the updated book list to the file
-                File.WriteAllText(@"C:\files\books.txt", string.Join(Environment.NewLine, updatedLines));
+            // Find its index in the array
+            int index = Array.IndexOf(Program.bookArray, selectedBook);
+
+            // Remove the book from the array
+            if (index >= 0)
+            {
+                Array.Copy(Program.bookArray, index + 1, Program.bookArray, index, Program.bookArray.Length - index - 1);
+                Array.Resize(ref Program.bookArray, Program.bookArray.Length - 1);
+            }
+
+            // Update the list box
+            lstAllTitles.Items.Clear();
+            foreach (Book newBook in Program.bookArray)
+            {
+                lstAllTitles.Items.Add(newBook);
             }
         }
     }

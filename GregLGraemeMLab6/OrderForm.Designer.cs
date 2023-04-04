@@ -82,6 +82,7 @@ namespace GregLGraemeMLab6
             this.lstNonFiction.Name = "lstNonFiction";
             this.lstNonFiction.Size = new System.Drawing.Size(275, 191);
             this.lstNonFiction.TabIndex = 0;
+            this.lstNonFiction.SelectedIndexChanged += new System.EventHandler(this.lstNonFiction_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -127,6 +128,7 @@ namespace GregLGraemeMLab6
             this.lstComicBooks.Name = "lstComicBooks";
             this.lstComicBooks.Size = new System.Drawing.Size(275, 191);
             this.lstComicBooks.TabIndex = 2;
+            this.lstComicBooks.SelectedIndexChanged += new System.EventHandler(this.lstComicBooks_SelectedIndexChanged);
             // 
             // btnAdd
             // 
@@ -160,6 +162,7 @@ namespace GregLGraemeMLab6
             this.lstFiction.Name = "lstFiction";
             this.lstFiction.Size = new System.Drawing.Size(275, 191);
             this.lstFiction.TabIndex = 1;
+            this.lstFiction.SelectedIndexChanged += new System.EventHandler(this.lstFiction_SelectedIndexChanged);
             // 
             // label3
             // 

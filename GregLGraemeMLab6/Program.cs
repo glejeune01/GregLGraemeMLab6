@@ -61,6 +61,7 @@ namespace GregLGraemeMLab6
                     book.Author = fields[2];
                     book.Genre = fields[3];
                     book.Price = decimal.Parse(fields[4]);
+                    book.Stock = int.Parse(fields[5]);
 
                     Array.Resize(ref bookArray, bookArray.Length + 1);
                     bookArray[bookArray.Length - 1] = book;

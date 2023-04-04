@@ -48,34 +48,28 @@ namespace GregLGraemeMLab6
 
         private void TxtNonFictionSearch_TextChanged(object sender, EventArgs e)
         {
-            FilterListbox(lstNonFiction, txtNonFictionSearch.Text);
+            FilterListbox(lstNonFiction, txtNonFictionSearch.Text, typeof(NonFiction));
         }
 
         private void TxtFictionSearch_TextChanged(object sender, EventArgs e)
         {
-            FilterListbox(lstFiction, txtFictionSearch.Text);
+            FilterListbox(lstFiction, txtFictionSearch.Text, typeof(Fiction));
         }
 
         private void TxtComicSearch_TextChanged(object sender, EventArgs e)
         {
-            FilterListbox(lstComicBooks, txtComicSearch.Text);
+            FilterListbox(lstComicBooks, txtComicSearch.Text, typeof(ComicBook));
         }
 
-        private void FilterListbox(ListBox listBox, string searchText)
+        private void FilterListbox(ListBox listBox, string searchText, Type bookType)
         {
             listBox.Items.Clear();
 
-            foreach (Book book in Program.bookArray)
+            IEnumerable<Book> booksOfType = Program.bookArray.Where(b => b.GetType() == bookType);
+
+            foreach (Book book in booksOfType)
             {
-                if (book is Fiction && book.Title.ToLower().Contains(searchText.ToLower()))
-                {
-                    listBox.Items.Add(book);
-                }
-                else if (book is NonFiction && book.Title.ToLower().Contains(searchText.ToLower()))
-                {
-                    listBox.Items.Add(book);
-                }
-                else if (book is ComicBook && book.Title.ToLower().Contains(searchText.ToLower()))
+                if (book.Title.ToLower().Contains(searchText.ToLower()))
                 {
                     listBox.Items.Add(book);
                 }

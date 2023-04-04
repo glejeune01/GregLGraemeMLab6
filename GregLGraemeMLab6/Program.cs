@@ -115,7 +115,7 @@ namespace GregLGraemeMLab6
                     string line;
                     if (book is ComicBook)
                     {
-                        line = $"{book.Code}|{book.Title}|{book.Author}|ComicBook|{book.Genre}|{(book as ComicBook).Edition}|{book.Price}|{book.Stock}";
+                        line = $"{book.Code}|{book.Title}|{book.Author}|{book.Genre}|{book.Price}|{(book as ComicBook).Edition}|{book.Stock}";
                     }
                     else
                     {

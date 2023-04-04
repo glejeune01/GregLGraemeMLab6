@@ -49,11 +49,12 @@ namespace GregLGraemeMLab6
 
         private void CheckoutForm_Load(object sender, EventArgs e)
         {
-
+            //
         }
 
         private void btnRemoveItem_Click(object sender, EventArgs e)
         {
+            
             if (lstCheckout.SelectedIndex >= 0)
             {
                 string msgTitle = "Attention";
@@ -65,10 +66,13 @@ namespace GregLGraemeMLab6
                 // If the user clicked "Yes", remove the selected item from the list.
                 if (result == DialogResult.Yes)
                 {
-                    lstCheckout.Items.RemoveAt(lstCheckout.SelectedIndex);
+                    int selectedIndex = lstCheckout.SelectedIndex;
+                    Book selectedBook = selectedBooks[selectedIndex];
+                    selectedBooks.Remove(selectedBook);
+                    lstCheckout.Items.RemoveAt(selectedIndex);
                     Calculations();
                 }
             }
         }
     }
-    }
+}

@@ -80,7 +80,7 @@ namespace GregLGraemeMLab6
             this.lstNonFiction.ItemHeight = 17;
             this.lstNonFiction.Location = new System.Drawing.Point(0, 111);
             this.lstNonFiction.Name = "lstNonFiction";
-            this.lstNonFiction.Size = new System.Drawing.Size(275, 191);
+            this.lstNonFiction.Size = new System.Drawing.Size(381, 191);
             this.lstNonFiction.TabIndex = 0;
             this.lstNonFiction.SelectedIndexChanged += new System.EventHandler(this.lstNonFiction_SelectedIndexChanged);
             // 
@@ -91,11 +91,11 @@ namespace GregLGraemeMLab6
             this.groupBox3.Controls.Add(this.lstComicBooks);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.MintCream;
-            this.groupBox3.Location = new System.Drawing.Point(686, 135);
+            this.groupBox3.Location = new System.Drawing.Point(816, 138);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(275, 302);
+            this.groupBox3.Size = new System.Drawing.Size(381, 302);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Comic Books";
@@ -105,7 +105,7 @@ namespace GregLGraemeMLab6
             this.txtComicSearch.BackColor = System.Drawing.Color.Azure;
             this.txtComicSearch.Location = new System.Drawing.Point(73, 60);
             this.txtComicSearch.Name = "txtComicSearch";
-            this.txtComicSearch.Size = new System.Drawing.Size(186, 24);
+            this.txtComicSearch.Size = new System.Drawing.Size(242, 24);
             this.txtComicSearch.TabIndex = 13;
             this.txtComicSearch.TextChanged += new System.EventHandler(this.TxtComicSearch_TextChanged);
             // 
@@ -126,7 +126,7 @@ namespace GregLGraemeMLab6
             this.lstComicBooks.ItemHeight = 17;
             this.lstComicBooks.Location = new System.Drawing.Point(0, 111);
             this.lstComicBooks.Name = "lstComicBooks";
-            this.lstComicBooks.Size = new System.Drawing.Size(275, 191);
+            this.lstComicBooks.Size = new System.Drawing.Size(381, 191);
             this.lstComicBooks.TabIndex = 2;
             this.lstComicBooks.SelectedIndexChanged += new System.EventHandler(this.lstComicBooks_SelectedIndexChanged);
             // 
@@ -134,7 +134,7 @@ namespace GregLGraemeMLab6
             // 
             this.btnAdd.BackColor = System.Drawing.Color.IndianRed;
             this.btnAdd.ForeColor = System.Drawing.Color.MintCream;
-            this.btnAdd.Location = new System.Drawing.Point(465, 474);
+            this.btnAdd.Location = new System.Drawing.Point(816, 474);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(168, 68);
             this.btnAdd.TabIndex = 7;
@@ -145,7 +145,7 @@ namespace GregLGraemeMLab6
             // btnCheckOut
             // 
             this.btnCheckOut.BackColor = System.Drawing.Color.IndianRed;
-            this.btnCheckOut.Location = new System.Drawing.Point(793, 474);
+            this.btnCheckOut.Location = new System.Drawing.Point(1029, 474);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(168, 68);
             this.btnCheckOut.TabIndex = 9;
@@ -160,7 +160,7 @@ namespace GregLGraemeMLab6
             this.lstFiction.ItemHeight = 17;
             this.lstFiction.Location = new System.Drawing.Point(0, 111);
             this.lstFiction.Name = "lstFiction";
-            this.lstFiction.Size = new System.Drawing.Size(275, 191);
+            this.lstFiction.Size = new System.Drawing.Size(381, 191);
             this.lstFiction.TabIndex = 1;
             this.lstFiction.SelectedIndexChanged += new System.EventHandler(this.lstFiction_SelectedIndexChanged);
             // 
@@ -181,11 +181,11 @@ namespace GregLGraemeMLab6
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.MintCream;
-            this.groupBox2.Location = new System.Drawing.Point(358, 135);
+            this.groupBox2.Location = new System.Drawing.Point(413, 138);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(275, 302);
+            this.groupBox2.Size = new System.Drawing.Size(381, 302);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Fiction";
@@ -195,7 +195,7 @@ namespace GregLGraemeMLab6
             this.txtFictionSearch.BackColor = System.Drawing.Color.Azure;
             this.txtFictionSearch.Location = new System.Drawing.Point(73, 64);
             this.txtFictionSearch.Name = "txtFictionSearch";
-            this.txtFictionSearch.Size = new System.Drawing.Size(190, 24);
+            this.txtFictionSearch.Size = new System.Drawing.Size(242, 24);
             this.txtFictionSearch.TabIndex = 12;
             this.txtFictionSearch.TextChanged += new System.EventHandler(this.TxtFictionSearch_TextChanged);
             // 
@@ -206,11 +206,11 @@ namespace GregLGraemeMLab6
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.MintCream;
-            this.groupBox1.Location = new System.Drawing.Point(30, 135);
+            this.groupBox1.Location = new System.Drawing.Point(10, 138);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(275, 302);
+            this.groupBox1.Size = new System.Drawing.Size(381, 302);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Non-Fiction";
@@ -220,7 +220,7 @@ namespace GregLGraemeMLab6
             this.txtNonFictionSearch.BackColor = System.Drawing.Color.Azure;
             this.txtNonFictionSearch.Location = new System.Drawing.Point(73, 67);
             this.txtNonFictionSearch.Name = "txtNonFictionSearch";
-            this.txtNonFictionSearch.Size = new System.Drawing.Size(184, 24);
+            this.txtNonFictionSearch.Size = new System.Drawing.Size(242, 24);
             this.txtNonFictionSearch.TabIndex = 11;
             this.txtNonFictionSearch.TextChanged += new System.EventHandler(this.TxtNonFictionSearch_TextChanged);
             // 
@@ -228,7 +228,7 @@ namespace GregLGraemeMLab6
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(36, 38);
+            this.label5.Location = new System.Drawing.Point(6, 41);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(469, 24);
             this.label5.TabIndex = 10;
@@ -237,7 +237,7 @@ namespace GregLGraemeMLab6
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(766, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(1004, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(195, 97);
             this.pictureBox1.TabIndex = 11;
@@ -248,7 +248,7 @@ namespace GregLGraemeMLab6
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(1015, 565);
+            this.ClientSize = new System.Drawing.Size(1211, 565);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnAdd);

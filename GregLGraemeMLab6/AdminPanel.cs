@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace GregLGraemeMLab6
 {
@@ -24,7 +25,7 @@ namespace GregLGraemeMLab6
             // Iterate through the bookArray and add each book to the appropriate listbox
             foreach (Book book in Program.bookArray)
             { 
-                lstAllTitles.Items.Add(book);
+                lstAllTitles.Items.Add(ToString(book));
             }
         }
 
@@ -80,7 +81,7 @@ namespace GregLGraemeMLab6
             lstAllTitles.Items.Clear();
             foreach(Book newBook in Program.bookArray)
             {
-                lstAllTitles.Items.Add(newBook);
+                lstAllTitles.Items.Add(ToString(newBook));
             }
         }
 
@@ -109,8 +110,13 @@ namespace GregLGraemeMLab6
             lstAllTitles.Items.Clear();
             foreach (Book newBook in Program.bookArray)
             {
-                lstAllTitles.Items.Add(newBook);
+                lstAllTitles.Items.Add(ToString(newBook));
             }
+        }
+
+        private string ToString(Book book) 
+        {
+            return $"{book.Title} by {book.Author}, {book.Price:C}, Stock: {book.Stock}";
         }
     }
 }

@@ -29,12 +29,13 @@ namespace GregLGraemeMLab6
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderForm));
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNonFictionSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lstNonFiction = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtComicSearch = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lstComicBooks = new System.Windows.Forms.ListBox();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -42,13 +43,16 @@ namespace GregLGraemeMLab6
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.lstFiction = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtFictionSearch = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -60,12 +64,13 @@ namespace GregLGraemeMLab6
             this.label2.Size = new System.Drawing.Size(0, 17);
             this.label2.TabIndex = 1;
             // 
-            // textBox1
+            // txtNonFictionSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 67);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 24);
-            this.textBox1.TabIndex = 11;
+            this.txtNonFictionSearch.Location = new System.Drawing.Point(73, 67);
+            this.txtNonFictionSearch.Name = "txtNonFictionSearch";
+            this.txtNonFictionSearch.Size = new System.Drawing.Size(195, 24);
+            this.txtNonFictionSearch.TabIndex = 11;
+            this.txtNonFictionSearch.TextChanged += new System.EventHandler(this.txtNonFictionSearch_TextChanged);
             // 
             // label1
             // 
@@ -88,11 +93,11 @@ namespace GregLGraemeMLab6
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.txtComicSearch);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.lstComicBooks);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(683, 66);
+            this.groupBox3.Location = new System.Drawing.Point(686, 135);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
@@ -101,12 +106,13 @@ namespace GregLGraemeMLab6
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Comic Books";
             // 
-            // textBox3
+            // txtComicSearch
             // 
-            this.textBox3.Location = new System.Drawing.Point(73, 60);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(195, 24);
-            this.textBox3.TabIndex = 13;
+            this.txtComicSearch.Location = new System.Drawing.Point(73, 60);
+            this.txtComicSearch.Name = "txtComicSearch";
+            this.txtComicSearch.Size = new System.Drawing.Size(195, 24);
+            this.txtComicSearch.TabIndex = 13;
+            this.txtComicSearch.TextChanged += new System.EventHandler(this.txtComicSearch_TextChanged);
             // 
             // label4
             // 
@@ -131,17 +137,18 @@ namespace GregLGraemeMLab6
             // 
             this.btnAdd.BackColor = System.Drawing.Color.IndianRed;
             this.btnAdd.ForeColor = System.Drawing.Color.MintCream;
-            this.btnAdd.Location = new System.Drawing.Point(80, 408);
+            this.btnAdd.Location = new System.Drawing.Point(83, 473);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(168, 68);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "&Add to Cart";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnRemove
             // 
             this.btnRemove.BackColor = System.Drawing.Color.IndianRed;
-            this.btnRemove.Location = new System.Drawing.Point(408, 409);
+            this.btnRemove.Location = new System.Drawing.Point(406, 474);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(168, 68);
             this.btnRemove.TabIndex = 8;
@@ -151,7 +158,7 @@ namespace GregLGraemeMLab6
             // btnCheckOut
             // 
             this.btnCheckOut.BackColor = System.Drawing.Color.IndianRed;
-            this.btnCheckOut.Location = new System.Drawing.Point(735, 409);
+            this.btnCheckOut.Location = new System.Drawing.Point(739, 474);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(168, 68);
             this.btnCheckOut.TabIndex = 9;
@@ -178,20 +185,21 @@ namespace GregLGraemeMLab6
             this.label3.TabIndex = 11;
             this.label3.Text = "Title:";
             // 
-            // textBox2
+            // txtFictionSearch
             // 
-            this.textBox2.Location = new System.Drawing.Point(73, 64);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(195, 24);
-            this.textBox2.TabIndex = 12;
+            this.txtFictionSearch.Location = new System.Drawing.Point(73, 64);
+            this.txtFictionSearch.Name = "txtFictionSearch";
+            this.txtFictionSearch.Size = new System.Drawing.Size(195, 24);
+            this.txtFictionSearch.TabIndex = 12;
+            this.txtFictionSearch.TextChanged += new System.EventHandler(this.txtFictionSearch_TextChanged);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.lstFiction);
+            this.groupBox2.Controls.Add(this.txtFictionSearch);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(355, 66);
+            this.groupBox2.Location = new System.Drawing.Point(358, 135);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -202,11 +210,11 @@ namespace GregLGraemeMLab6
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lstNonFiction);
+            this.groupBox1.Controls.Add(this.txtNonFictionSearch);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(27, 66);
+            this.groupBox1.Location = new System.Drawing.Point(30, 135);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -219,18 +227,28 @@ namespace GregLGraemeMLab6
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(200, 18);
+            this.label5.Location = new System.Drawing.Point(256, 34);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(469, 24);
             this.label5.TabIndex = 10;
             this.label5.Text = "Please choose from our award winning selection!";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(799, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(195, 97);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSalmon;
-            this.ClientSize = new System.Drawing.Size(982, 503);
+            this.ClientSize = new System.Drawing.Size(1015, 565);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnRemove);
@@ -252,6 +270,7 @@ namespace GregLGraemeMLab6
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,15 +285,17 @@ namespace GregLGraemeMLab6
         private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.ListBox lstNonFiction;
         private System.Windows.Forms.ListBox lstComicBooks;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNonFictionSearch;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtComicSearch;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox lstFiction;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtFictionSearch;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }

@@ -61,6 +61,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Books.cs" />
+    <Compile Include="ComicBook.cs" />
+    <Compile Include="Fiction.cs" />
+    <Compile Include="NonFiction.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

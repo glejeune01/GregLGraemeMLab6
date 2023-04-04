@@ -12,6 +12,7 @@ namespace GregLGraemeMLab6
 {
     public partial class OrderForm : Form
     {
+        public List<Book> selectedBooks = new List<Book>();
         public OrderForm()
         {
             InitializeComponent();
@@ -19,14 +20,84 @@ namespace GregLGraemeMLab6
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //
+            Program.bookArray = Program.ImportBooks(filePath: "C:\\files\\books.txt");
+            // Iterate through the bookArray and add each book to the appropriate listbox
+            foreach (Book book in Program.bookArray)
+            {
+                if (book is Fiction)
+                {
+                    lstFiction.Items.Add(book);
+                }
+                else if (book is NonFiction)
+                {
+                    lstNonFiction.Items.Add(book);
+                }
+                else if (book is ComicBook)
+                {
+                    lstComicBooks.Items.Add(book);
+                }
+            }
         }
+
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CheckoutForm checkoutForm = new CheckoutForm();
+            CheckoutForm checkoutForm = new CheckoutForm(selectedBooks);
             checkoutForm.ShowDialog();
+        }
+
+        private void txtNonFictionSearch_TextChanged(object sender, EventArgs e)
+        {
+            FilterListbox(lstNonFiction, txtNonFictionSearch.Text);
+        }
+
+        private void txtFictionSearch_TextChanged(object sender, EventArgs e)
+        {
+            FilterListbox(lstFiction, txtFictionSearch.Text);
+        }
+
+        private void txtComicSearch_TextChanged(object sender, EventArgs e)
+        {
+            FilterListbox(lstComicBooks, txtComicSearch.Text);
+        }
+
+        private void FilterListbox(ListBox listBox, string searchText)
+        {
+            listBox.Items.Clear();
+
+            foreach (Book book in Program.bookArray)
+            {
+                if (book is Fiction && book.Title.ToLower().Contains(searchText.ToLower()))
+                {
+                    listBox.Items.Add(book);
+                }
+                else if (book is NonFiction && book.Title.ToLower().Contains(searchText.ToLower()))
+                {
+                    listBox.Items.Add(book);
+                }
+                else if (book is ComicBook && book.Title.ToLower().Contains(searchText.ToLower()))
+                {
+                    listBox.Items.Add(book);
+                }
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Book selectedBook = lstFiction.SelectedItem as Book
+                ?? lstNonFiction.SelectedItem as Book
+                ?? lstComicBooks.SelectedItem as Book;
+
+            if (selectedBook != null)
+            {
+                selectedBooks.Add(selectedBook);
+                MessageBox.Show($"{selectedBook.Title} has been added to your cart!");
+            }
+            else
+            {
+                MessageBox.Show("Please select a book to add to your cart.");
+            }
         }
     }
 }

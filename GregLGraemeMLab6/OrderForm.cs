@@ -99,5 +99,31 @@ namespace GregLGraemeMLab6
                 MessageBox.Show("Please select a book to add to your cart.");
             }
         }
+        private void lstNonFiction_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstNonFiction.SelectedIndex != -1)
+            {
+                lstFiction.ClearSelected();
+                lstComicBooks.ClearSelected();
+            }
+        }
+
+        private void lstFiction_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstFiction.SelectedIndex != -1)
+            {
+                lstComicBooks.ClearSelected();
+                lstNonFiction.ClearSelected();
+            }
+        }
+
+        private void lstComicBooks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstComicBooks.SelectedIndex != -1)
+            {
+                lstFiction.ClearSelected();
+                lstNonFiction.ClearSelected();
+            }
+        }
     }
 }

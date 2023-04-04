@@ -13,6 +13,7 @@ namespace GregLGraemeMLab6
         public string Author { get; set; }
         public string Genre { get; set; }
         public decimal Price { get; set; }
+        public string Edition { get; set; }
         public int Stock { get; set; }
 
         public override string ToString()

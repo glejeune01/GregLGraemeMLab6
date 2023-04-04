@@ -107,7 +107,7 @@ namespace GregLGraemeMLab6
             this.txtComicSearch.Name = "txtComicSearch";
             this.txtComicSearch.Size = new System.Drawing.Size(186, 24);
             this.txtComicSearch.TabIndex = 13;
-            this.txtComicSearch.TextChanged += new System.EventHandler(this.txtComicSearch_TextChanged);
+            this.txtComicSearch.TextChanged += new System.EventHandler(this.TxtComicSearch_TextChanged);
             // 
             // label4
             // 
@@ -151,7 +151,7 @@ namespace GregLGraemeMLab6
             this.btnCheckOut.TabIndex = 9;
             this.btnCheckOut.Text = "&Check Out";
             this.btnCheckOut.UseVisualStyleBackColor = false;
-            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
+            this.btnCheckOut.Click += new System.EventHandler(this.BtnCheckOut_Click);
             // 
             // lstFiction
             // 
@@ -197,7 +197,7 @@ namespace GregLGraemeMLab6
             this.txtFictionSearch.Name = "txtFictionSearch";
             this.txtFictionSearch.Size = new System.Drawing.Size(190, 24);
             this.txtFictionSearch.TabIndex = 12;
-            this.txtFictionSearch.TextChanged += new System.EventHandler(this.txtFictionSearch_TextChanged);
+            this.txtFictionSearch.TextChanged += new System.EventHandler(this.TxtFictionSearch_TextChanged);
             // 
             // groupBox1
             // 
@@ -222,7 +222,7 @@ namespace GregLGraemeMLab6
             this.txtNonFictionSearch.Name = "txtNonFictionSearch";
             this.txtNonFictionSearch.Size = new System.Drawing.Size(184, 24);
             this.txtNonFictionSearch.TabIndex = 11;
-            this.txtNonFictionSearch.TextChanged += new System.EventHandler(this.txtNonFictionSearch_TextChanged);
+            this.txtNonFictionSearch.TextChanged += new System.EventHandler(this.TxtNonFictionSearch_TextChanged);
             // 
             // label5
             // 

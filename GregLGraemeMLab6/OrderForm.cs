@@ -39,24 +39,24 @@ namespace GregLGraemeMLab6
             }
         }
 
-        private void btnCheckOut_Click(object sender, EventArgs e)
+        private void BtnCheckOut_Click(object sender, EventArgs e)
         {
             this.Hide();
             CheckoutForm checkoutForm = new CheckoutForm(selectedBooks);
             checkoutForm.ShowDialog();
         }
 
-        private void txtNonFictionSearch_TextChanged(object sender, EventArgs e)
+        private void TxtNonFictionSearch_TextChanged(object sender, EventArgs e)
         {
             FilterListbox(lstNonFiction, txtNonFictionSearch.Text);
         }
 
-        private void txtFictionSearch_TextChanged(object sender, EventArgs e)
+        private void TxtFictionSearch_TextChanged(object sender, EventArgs e)
         {
             FilterListbox(lstFiction, txtFictionSearch.Text);
         }
 
-        private void txtComicSearch_TextChanged(object sender, EventArgs e)
+        private void TxtComicSearch_TextChanged(object sender, EventArgs e)
         {
             FilterListbox(lstComicBooks, txtComicSearch.Text);
         }

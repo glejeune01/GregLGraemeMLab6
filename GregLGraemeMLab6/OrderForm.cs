@@ -39,7 +39,6 @@ namespace GregLGraemeMLab6
             }
         }
 
-
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
             this.Hide();

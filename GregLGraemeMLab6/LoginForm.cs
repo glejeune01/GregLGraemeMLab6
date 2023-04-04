@@ -31,12 +31,20 @@ namespace GregLGraemeMLab6
             string enteredUsername = txtUsernameEntry.Text;
             string enteredPassword = txtPasswordEntry.Text;
 
-            if (ValidateCredentials(adminUser, enteredUsername, enteredPassword) || ValidateCredentials(customerUser, enteredUsername, enteredPassword))
+            if (ValidateCredentials(customerUser, enteredUsername, enteredPassword))
             {
                 MessageBox.Show("Login successful!");
                 OrderForm orderForm = new OrderForm();
                 this.Hide(); // hide the LoginForm
                 orderForm.ShowDialog();
+            }
+
+            else if (ValidateCredentials(adminUser, enteredUsername, enteredPassword))
+            {
+                MessageBox.Show("Login successful!");
+                AdminPanel adminPanel = new AdminPanel();
+                this.Hide(); // hide the LoginForm
+                adminPanel.ShowDialog();
             }
             else
             {

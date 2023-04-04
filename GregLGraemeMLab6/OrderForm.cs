@@ -84,6 +84,8 @@ namespace GregLGraemeMLab6
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string msgTitle = "Attention";
+            string success = "Success!";
             Book selectedBook = lstFiction.SelectedItem as Book
                 ?? lstNonFiction.SelectedItem as Book
                 ?? lstComicBooks.SelectedItem as Book;
@@ -91,11 +93,11 @@ namespace GregLGraemeMLab6
             if (selectedBook != null)
             {
                 selectedBooks.Add(selectedBook);
-                MessageBox.Show($"{selectedBook.Title} has been added to your cart!");
+                MessageBox.Show($"{selectedBook.Title} has been added to your cart!", success);
             }
             else
             {
-                MessageBox.Show("Please select a book to add to your cart.");
+                MessageBox.Show("Please select a book to add to your cart.", msgTitle);
             }
         }
         private void lstNonFiction_SelectedIndexChanged(object sender, EventArgs e)

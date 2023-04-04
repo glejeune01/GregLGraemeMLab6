@@ -52,6 +52,9 @@ namespace GregLGraemeMLab6
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
+            string msgTitle = "Success!";
+            string msgText = "The Peoples Library has been updated";
+            MessageBox.Show(msgText, msgTitle);
             // Open the file for writing
             using (StreamWriter writer = new StreamWriter("C:\\files\\books.txt", true))
             {
@@ -74,20 +77,30 @@ namespace GregLGraemeMLab6
             if (lstAllTitles.SelectedIndex != -1) // check if an item is selected
             {
                 string selectedBook = lstAllTitles.SelectedItem.ToString();
-                lstAllTitles.Items.Remove(selectedBook); // remove from list box
 
-                // remove from books.txt file
-                string[] lines = File.ReadAllLines(@"C:\files\books.txt");
-                List<string> updatedLines = new List<string>();
-                foreach (string line in lines)
+                // Show message box to confirm removal
+                string msgTitle = "Attention!";
+                string msgText = "Are you sure you want to remove this item(s)?";
+                DialogResult result = MessageBox.Show(msgText, msgTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
                 {
-                    if (!line.StartsWith(selectedBook)) // skip the line with the selected book
+                    lstAllTitles.Items.Remove(selectedBook); // remove from list box
+
+                    // remove from books.txt file
+                    string[] lines = File.ReadAllLines(@"C:\files\books.txt");
+                    List<string> updatedLines = new List<string>();
+                    foreach (string line in lines)
                     {
-                        updatedLines.Add(line);
+                        if (!line.Contains(selectedBook)) // skip the line with the selected book
+                        {
+                            updatedLines.Add(line);
+                        }
                     }
+
+                    // Overwrite the file with the updated content
+                    File.WriteAllLines(@"C:\files\books.txt", updatedLines);
                 }
-                // Write the updated book list to the file
-                File.WriteAllText(@"C:\files\books.txt", string.Join(Environment.NewLine, updatedLines));
             }
         }
     }

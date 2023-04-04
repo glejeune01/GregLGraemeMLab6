@@ -12,6 +12,8 @@ namespace GregLGraemeMLab6
     internal class Program
     {
         public static Book[] bookArray = new Book[0];
+        public static UserCreds[] userArray = new UserCreds[0];
+
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();
@@ -41,7 +43,7 @@ namespace GregLGraemeMLab6
                         }
                         else if (fields[3] == "Fiction")
                         {
-                            book = new Fiction { Stock = int.Parse(fields[5])};
+                            book = new Fiction { Stock = int.Parse(fields[5]) };
                         }
                         else
                         {
@@ -50,7 +52,7 @@ namespace GregLGraemeMLab6
                     }
                     else if (fields.Length == 7 && fields[3] == "ComicBook") // ComicBook
                     {
-                        book = new ComicBook { Edition = fields[5], Stock = int.Parse(fields[6])};
+                        book = new ComicBook { Edition = fields[5], Stock = int.Parse(fields[6]) };
                     }
                     else
                     {
@@ -69,5 +71,59 @@ namespace GregLGraemeMLab6
             }
         }
 
+        public static UserCreds[] ImportUsers(string filePath)
+        {
+            UserCreds[] userArray = new UserCreds[0];
+            using (StreamReader reader = new StreamReader(filePath))
+            {
+                // Read each line of the file and create a book instance for each line
+                while (!reader.EndOfStream)
+                {
+                    string line = reader.ReadLine();
+                    string[] fields = line.Split('|');
+
+                    // Determine the type of book and create a corresponding instance
+                    UserCreds user = null;
+                    if (fields.Length == 3)
+                    {
+                        string username = fields[0];
+                        string password = fields[1];
+                        string group = fields[2];
+
+                        user = new UserCreds(username, password, group);
+                    }
+                    if (user != null)
+                    {
+                        Array.Resize(ref userArray, userArray.Length + 1);
+                        userArray[userArray.Length - 1] = user;
+                    }
+                }
+            }
+            return userArray;
+        }
+
+        public static void ExportBooks(string filePath, Book[] books)
+        {
+            //Clear contents of file
+            File.WriteAllText(filePath, string.Empty);
+            // Open the text file for writing
+            using (StreamWriter writer = new StreamWriter(filePath, false))
+            {
+                // Write each book to the file in the same format as the ImportBooks method reads it
+                foreach (Book book in books)
+                {
+                    string line;
+                    if (book is ComicBook)
+                    {
+                        line = $"{book.Code}|{book.Title}|{book.Author}|ComicBook|{book.Genre}|{(book as ComicBook).Edition}|{book.Price}|{book.Stock}";
+                    }
+                    else
+                    {
+                        line = $"{book.Code}|{book.Title}|{book.Author}|{book.Genre}|{book.Price}|{book.Stock}";
+                    }
+                    writer.WriteLine(line);
+                }
+            }
+        }
     }
 }

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GregLGraemeMLab6
 {
@@ -11,6 +13,17 @@ namespace GregLGraemeMLab6
     {
         public static Book[] ImportBooks(string filePath)
         {
+            try
+            {
+                Validation.ValidateFileExtension(filePath);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Error - Import Failed");
+                
+                return null;
+            }
+
             // Open the text file for reading
             using (StreamReader reader = new StreamReader(filePath))
             {
@@ -58,59 +71,82 @@ namespace GregLGraemeMLab6
             }
         }
 
+
         public static UserCreds[] ImportUsers(string filePath)
         {
             UserCreds[] userArray = new UserCreds[0];
-            using (StreamReader reader = new StreamReader(filePath))
+            try
             {
-                // Read each line of the file and create a book instance for each line
-                while (!reader.EndOfStream)
+                Validation.ValidateFileExtension(filePath);
+                using (StreamReader reader = new StreamReader(filePath))
                 {
-                    string line = reader.ReadLine();
-                    string[] fields = line.Split('|');
-
-                    // Determine the type of book and create a corresponding instance
-                    UserCreds user = null;
-                    if (fields.Length == 3)
+                    // Read each line of the file and create a book instance for each line
+                    while (!reader.EndOfStream)
                     {
-                        string username = fields[0];
-                        string password = fields[1];
-                        string group = fields[2];
+                        string line = reader.ReadLine();
+                        string[] fields = line.Split('|');
 
-                        user = new UserCreds(username, password, group);
-                    }
-                    if (user != null)
-                    {
-                        Array.Resize(ref userArray, userArray.Length + 1);
-                        userArray[userArray.Length - 1] = user;
+                        // Determine the type of book and create a corresponding instance
+                        UserCreds user = null;
+                        if (fields.Length == 3)
+                        {
+                            string username = fields[0];
+                            string password = fields[1];
+                            string group = fields[2];
+
+                            user = new UserCreds(username, password, group);
+                        }
+                        if (user != null)
+                        {
+                            Array.Resize(ref userArray, userArray.Length + 1);
+                            userArray[userArray.Length - 1] = user;
+                        }
                     }
                 }
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Error - no file");
             }
             return userArray;
         }
 
+
+
         public static void ExportBooks(string filePath, Book[] books)
         {
-            //Clear contents of file
-            File.WriteAllText(filePath, string.Empty);
-            // Open the text file for writing
-            using (StreamWriter writer = new StreamWriter(filePath, false))
+            try
             {
-                // Write each book to the file in the same format as the ImportBooks method reads it
-                foreach (Book book in books)
+                Validation.ValidateFileExtension(filePath);
+
+                //Clear contents of file
+                File.WriteAllText(filePath, string.Empty);
+
+                // Open the text file for writing
+                using (StreamWriter writer = new StreamWriter(filePath, false))
                 {
-                    string line;
-                    if (book is ComicBook)
+                    // Write each book to the file in the same format as the ImportBooks method reads it
+                    foreach (Book book in books)
                     {
-                        line = $"{book.Code}|{book.Title}|{book.Author}|{book.Genre}|{book.Price}|{(book as ComicBook).Edition}|{book.Stock}";
+                        string line;
+                        if (book is ComicBook)
+                        {
+                            line = $"{book.Code}|{book.Title}|{book.Author}|{book.Genre}|{book.Price}|{(book as ComicBook).Edition}|{book.Stock}";
+                        }
+                        else
+                        {
+                            line = $"{book.Code}|{book.Title}|{book.Author}|{book.Genre}|{book.Price}|{book.Stock}";
+                        }
+                        writer.WriteLine(line);
                     }
-                    else
-                    {
-                        line = $"{book.Code}|{book.Title}|{book.Author}|{book.Genre}|{book.Price}|{book.Stock}";
-                    }
-                    writer.WriteLine(line);
                 }
             }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Error - Export Failed");
+            }
         }
+
+
     }
 }

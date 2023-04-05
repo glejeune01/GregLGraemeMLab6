@@ -74,7 +74,7 @@ namespace GregLGraemeMLab6
                 }
             }
         }
-
+        
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             string msgTitle = "Attention";
@@ -83,14 +83,20 @@ namespace GregLGraemeMLab6
             // Display a confirmation message box with "Yes" and "No" buttons.
             DialogResult result = MessageBox.Show(msgText, msgTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // If the user clicked "Yes", remove the selected item from the list.
+            // If the user clicked "Yes", lower stock if available.
             if (result == DialogResult.Yes)
             {
                 
                 foreach (Book book in selectedBooks)
                 {
                     // reduce the quantity of the book by 1
-                    book.Stock -= 1;
+                    book.Stock--;
+
+                    if (book.Stock < 1)
+                    {
+                        MessageBox.Show(book.Title + " is unavailable, we will continue to process the rest of your order!", "Book unavailable");
+                        book.Stock++;
+                    }
                 }
 
                 MessageBox.Show("Thank you for completing your order", "Order Completed");

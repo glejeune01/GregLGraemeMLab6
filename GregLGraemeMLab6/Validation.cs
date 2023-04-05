@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GregLGraemeMLab6
 {
@@ -19,5 +21,16 @@ namespace GregLGraemeMLab6
                 return false;
             }
         }
+
+        public static void ValidateFileExtension(string filePath)
+        {
+            // Check if the file path exists
+            if (!File.Exists(filePath))
+            {
+                throw new ArgumentException("File Path does not exist, please check if file is in C:/files");
+            }
+        }
+
+
     }
 }

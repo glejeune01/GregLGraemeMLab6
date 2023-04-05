@@ -24,7 +24,6 @@ namespace GregLGraemeMLab6
         {
             return $"{Title} by {Author}, {Price:C}";
         }
-
         // Overloaded -- operator to add 1 from stock
         public static Book operator ++(Book book)
         {
@@ -43,3 +42,4 @@ namespace GregLGraemeMLab6
         }
     }
 }
+

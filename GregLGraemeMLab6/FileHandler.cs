@@ -39,11 +39,11 @@ namespace GregLGraemeMLab6
                     {
                         if (fields[3] == "NonFiction")
                         {
-                            book = new NonFiction { Stock = int.Parse(fields[5]) };
+                            book = new NonFiction { Stock = Validation.IsInteger(fields[5]) };
                         }
                         else if (fields[3] == "Fiction")
                         {
-                            book = new Fiction { Stock = int.Parse(fields[5]) };
+                            book = new Fiction { Stock = Validation.IsInteger(fields[5]) };
                         }
                         else
                         {
@@ -52,21 +52,32 @@ namespace GregLGraemeMLab6
                     }
                     else if (fields.Length == 7 && fields[3] == "ComicBook") // ComicBook
                     {
-                        book = new ComicBook { Edition = fields[5], Stock = int.Parse(fields[6]) };
+                        book = new ComicBook { Edition = fields[5], Stock = Validation.IsInteger(fields[6]) };
                     }
                     else
                     {
                         continue;
                     }
-                    book.Code = int.Parse(fields[0]);
+                    book.Code = Validation.IsInteger(fields[0]);
                     book.Title = fields[1];
                     book.Author = fields[2];
                     book.Genre = fields[3];
-                    book.Price = decimal.Parse(fields[4]);
+                    book.Price = Validation.IsDecimal(fields[4]);
 
                     Array.Resize(ref Program.bookArray, Program.bookArray.Length + 1);
                     Program.bookArray[Program.bookArray.Length - 1] = book;
                 }
+                foreach (Book book in Program.bookArray)
+                {
+                    if (book is ComicBook comicBook)
+                    {
+                        ComicBook clonedComicBook = (ComicBook)comicBook.Clone();
+                        Array.Resize(ref Program.bookArray, Program.bookArray.Length + 1);
+                        Program.bookArray[Program.bookArray.Length - 1] = clonedComicBook;
+                    }
+                }
+
+
                 return Program.bookArray;
             }
         }

@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5573C052-C2C9-4589-B6FE-11888E361582}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>GregLGraemeMLab6</RootNamespace>
     <AssemblyName>GregLGraemeMLab6</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
@@ -48,6 +48,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,6 +73,7 @@
     <Compile Include="Books.cs" />
     <Compile Include="ComicBook.cs" />
     <Compile Include="Fiction.cs" />
+    <Compile Include="FileHandler.cs" />
     <Compile Include="NonFiction.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -97,6 +101,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="UserCreds.cs" />
+    <Compile Include="Validation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -20,7 +20,7 @@ namespace GregLGraemeMLab6
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Program.userArray = Program.ImportUsers(filePath: "C:\\files\\Users.txt");
+            Program.userArray = FileHandler.ImportUsers(filePath: "C:\\files\\Users.txt");
         }
 
         //Logging the user in, creates two new user objects and compares against entry from user
@@ -28,12 +28,13 @@ namespace GregLGraemeMLab6
         {
             string username = txtUsernameEntry.Text;
             string password = txtPasswordEntry.Text;
+            Validation validator = new Validation();
 
             foreach (UserCreds user in Program.userArray)
             {
                 if (user.Group == "admin")
                 {
-                    if (ValidateCredentials(user, username, password))
+                    if (validator.ValidateCredentials(user, username, password))
                     {
                         MessageBox.Show("Login successful!");
                         AdminPanel adminPanel = new AdminPanel();
@@ -44,7 +45,7 @@ namespace GregLGraemeMLab6
                 }
                 else if (user.Group == "customer")
                 {
-                    if (ValidateCredentials(user, username, password))
+                    if (validator.ValidateCredentials(user, username, password))
                     {
                         MessageBox.Show("Login successful!");
                         OrderForm orderForm = new OrderForm();
@@ -58,16 +59,5 @@ namespace GregLGraemeMLab6
             MessageBox.Show("Invalid username or password.");
         }
             //Validates the username and password
-            public bool ValidateCredentials(UserCreds user, string enteredUsername, string enteredPassword)
-        {
-            if (user.Username == enteredUsername && user.Password == enteredPassword)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
     }
 }

@@ -20,7 +20,7 @@ namespace GregLGraemeMLab6
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Program.bookArray = Program.ImportBooks(filePath: "C:\\files\\books.txt");
+            Program.bookArray = FileHandler.ImportBooks(filePath: "C:\\files\\books.txt");
             // Iterate through the bookArray and add each book to the appropriate listbox
             foreach (Book book in Program.bookArray)
             {

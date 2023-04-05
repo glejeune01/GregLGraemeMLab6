@@ -36,7 +36,6 @@
             this.lblCode = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblAuthor = new System.Windows.Forms.Label();
-            this.lblGenre = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblEdition = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
@@ -47,7 +46,6 @@
             this.txtStockEntry = new System.Windows.Forms.TextBox();
             this.txtEditionEntry = new System.Windows.Forms.TextBox();
             this.txtPriceEntry = new System.Windows.Forms.TextBox();
-            this.txtGenreEntry = new System.Windows.Forms.TextBox();
             this.lblBookType = new System.Windows.Forms.Label();
             this.cboBookTypeSelector = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -56,16 +54,17 @@
             // lstAllTitles
             // 
             this.lstAllTitles.FormattingEnabled = true;
-            this.lstAllTitles.ItemHeight = 20;
+            this.lstAllTitles.ItemHeight = 17;
             this.lstAllTitles.Location = new System.Drawing.Point(428, 171);
             this.lstAllTitles.Margin = new System.Windows.Forms.Padding(4);
             this.lstAllTitles.Name = "lstAllTitles";
-            this.lstAllTitles.Size = new System.Drawing.Size(751, 424);
+            this.lstAllTitles.Size = new System.Drawing.Size(751, 412);
             this.lstAllTitles.TabIndex = 0;
+            this.lstAllTitles.SelectedIndexChanged += new System.EventHandler(this.lstAllTitles_SelectedIndexChanged);
             // 
             // btnAddEdit
             // 
-            this.btnAddEdit.Location = new System.Drawing.Point(245, 629);
+            this.btnAddEdit.Location = new System.Drawing.Point(245, 517);
             this.btnAddEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddEdit.Name = "btnAddEdit";
             this.btnAddEdit.Size = new System.Drawing.Size(112, 30);
@@ -104,7 +103,7 @@
             this.lblCode.Location = new System.Drawing.Point(13, 245);
             this.lblCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(52, 20);
+            this.lblCode.Size = new System.Drawing.Size(45, 17);
             this.lblCode.TabIndex = 5;
             this.lblCode.Text = "Code";
             // 
@@ -113,10 +112,10 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.BackColor = System.Drawing.Color.DarkSlateGray;
             this.lblTitle.ForeColor = System.Drawing.Color.MintCream;
-            this.lblTitle.Location = new System.Drawing.Point(13, 288);
+            this.lblTitle.Location = new System.Drawing.Point(13, 290);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(46, 20);
+            this.lblTitle.Size = new System.Drawing.Size(40, 17);
             this.lblTitle.TabIndex = 6;
             this.lblTitle.Text = "Title";
             // 
@@ -125,34 +124,22 @@
             this.lblAuthor.AutoSize = true;
             this.lblAuthor.BackColor = System.Drawing.Color.DarkSlateGray;
             this.lblAuthor.ForeColor = System.Drawing.Color.MintCream;
-            this.lblAuthor.Location = new System.Drawing.Point(13, 334);
+            this.lblAuthor.Location = new System.Drawing.Point(13, 335);
             this.lblAuthor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(64, 20);
+            this.lblAuthor.Size = new System.Drawing.Size(56, 17);
             this.lblAuthor.TabIndex = 7;
             this.lblAuthor.Text = "Author";
-            // 
-            // lblGenre
-            // 
-            this.lblGenre.AutoSize = true;
-            this.lblGenre.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.lblGenre.ForeColor = System.Drawing.Color.MintCream;
-            this.lblGenre.Location = new System.Drawing.Point(13, 380);
-            this.lblGenre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(60, 20);
-            this.lblGenre.TabIndex = 8;
-            this.lblGenre.Text = "Genre";
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.BackColor = System.Drawing.Color.DarkSlateGray;
             this.lblPrice.ForeColor = System.Drawing.Color.MintCream;
-            this.lblPrice.Location = new System.Drawing.Point(13, 426);
+            this.lblPrice.Location = new System.Drawing.Point(13, 380);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(53, 20);
+            this.lblPrice.Size = new System.Drawing.Size(45, 17);
             this.lblPrice.TabIndex = 9;
             this.lblPrice.Text = "Price";
             // 
@@ -161,10 +148,10 @@
             this.lblEdition.AutoSize = true;
             this.lblEdition.BackColor = System.Drawing.Color.DarkSlateGray;
             this.lblEdition.ForeColor = System.Drawing.Color.MintCream;
-            this.lblEdition.Location = new System.Drawing.Point(13, 471);
+            this.lblEdition.Location = new System.Drawing.Point(13, 425);
             this.lblEdition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEdition.Name = "lblEdition";
-            this.lblEdition.Size = new System.Drawing.Size(67, 20);
+            this.lblEdition.Size = new System.Drawing.Size(58, 17);
             this.lblEdition.TabIndex = 10;
             this.lblEdition.Text = "Edition";
             // 
@@ -173,10 +160,10 @@
             this.lblStock.AutoSize = true;
             this.lblStock.BackColor = System.Drawing.Color.DarkSlateGray;
             this.lblStock.ForeColor = System.Drawing.Color.MintCream;
-            this.lblStock.Location = new System.Drawing.Point(13, 517);
+            this.lblStock.Location = new System.Drawing.Point(13, 470);
             this.lblStock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(56, 20);
+            this.lblStock.Size = new System.Drawing.Size(48, 17);
             this.lblStock.TabIndex = 11;
             this.lblStock.Text = "Stock";
             // 
@@ -192,59 +179,51 @@
             // 
             // txtCodeEntry
             // 
-            this.txtCodeEntry.Location = new System.Drawing.Point(127, 244);
+            this.txtCodeEntry.Location = new System.Drawing.Point(127, 242);
             this.txtCodeEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodeEntry.Name = "txtCodeEntry";
-            this.txtCodeEntry.Size = new System.Drawing.Size(230, 27);
+            this.txtCodeEntry.Size = new System.Drawing.Size(230, 23);
             this.txtCodeEntry.TabIndex = 13;
             // 
             // txtTitleEntry
             // 
-            this.txtTitleEntry.Location = new System.Drawing.Point(127, 291);
+            this.txtTitleEntry.Location = new System.Drawing.Point(127, 287);
             this.txtTitleEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitleEntry.Name = "txtTitleEntry";
-            this.txtTitleEntry.Size = new System.Drawing.Size(230, 27);
+            this.txtTitleEntry.Size = new System.Drawing.Size(230, 23);
             this.txtTitleEntry.TabIndex = 14;
             // 
             // txtAuthorEntry
             // 
-            this.txtAuthorEntry.Location = new System.Drawing.Point(127, 333);
+            this.txtAuthorEntry.Location = new System.Drawing.Point(127, 332);
             this.txtAuthorEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtAuthorEntry.Name = "txtAuthorEntry";
-            this.txtAuthorEntry.Size = new System.Drawing.Size(230, 27);
+            this.txtAuthorEntry.Size = new System.Drawing.Size(230, 23);
             this.txtAuthorEntry.TabIndex = 15;
             // 
             // txtStockEntry
             // 
-            this.txtStockEntry.Location = new System.Drawing.Point(127, 516);
+            this.txtStockEntry.Location = new System.Drawing.Point(127, 467);
             this.txtStockEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtStockEntry.Name = "txtStockEntry";
-            this.txtStockEntry.Size = new System.Drawing.Size(230, 27);
+            this.txtStockEntry.Size = new System.Drawing.Size(230, 23);
             this.txtStockEntry.TabIndex = 16;
             // 
             // txtEditionEntry
             // 
-            this.txtEditionEntry.Location = new System.Drawing.Point(127, 471);
+            this.txtEditionEntry.Location = new System.Drawing.Point(127, 422);
             this.txtEditionEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtEditionEntry.Name = "txtEditionEntry";
-            this.txtEditionEntry.Size = new System.Drawing.Size(230, 27);
+            this.txtEditionEntry.Size = new System.Drawing.Size(230, 23);
             this.txtEditionEntry.TabIndex = 17;
             // 
             // txtPriceEntry
             // 
-            this.txtPriceEntry.Location = new System.Drawing.Point(127, 425);
+            this.txtPriceEntry.Location = new System.Drawing.Point(127, 377);
             this.txtPriceEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtPriceEntry.Name = "txtPriceEntry";
-            this.txtPriceEntry.Size = new System.Drawing.Size(230, 27);
+            this.txtPriceEntry.Size = new System.Drawing.Size(230, 23);
             this.txtPriceEntry.TabIndex = 18;
-            // 
-            // txtGenreEntry
-            // 
-            this.txtGenreEntry.Location = new System.Drawing.Point(127, 379);
-            this.txtGenreEntry.Margin = new System.Windows.Forms.Padding(4);
-            this.txtGenreEntry.Name = "txtGenreEntry";
-            this.txtGenreEntry.Size = new System.Drawing.Size(230, 27);
-            this.txtGenreEntry.TabIndex = 19;
             // 
             // lblBookType
             // 
@@ -254,7 +233,7 @@
             this.lblBookType.Location = new System.Drawing.Point(13, 171);
             this.lblBookType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBookType.Name = "lblBookType";
-            this.lblBookType.Size = new System.Drawing.Size(97, 20);
+            this.lblBookType.Size = new System.Drawing.Size(85, 17);
             this.lblBookType.TabIndex = 20;
             this.lblBookType.Text = "Book Type";
             // 
@@ -267,18 +246,17 @@
             "Comic Book"});
             this.cboBookTypeSelector.Location = new System.Drawing.Point(127, 171);
             this.cboBookTypeSelector.Name = "cboBookTypeSelector";
-            this.cboBookTypeSelector.Size = new System.Drawing.Size(230, 28);
+            this.cboBookTypeSelector.Size = new System.Drawing.Size(230, 25);
             this.cboBookTypeSelector.TabIndex = 21;
             // 
             // AdminPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1216, 720);
             this.Controls.Add(this.cboBookTypeSelector);
             this.Controls.Add(this.lblBookType);
-            this.Controls.Add(this.txtGenreEntry);
             this.Controls.Add(this.txtPriceEntry);
             this.Controls.Add(this.txtEditionEntry);
             this.Controls.Add(this.txtStockEntry);
@@ -289,7 +267,6 @@
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.lblEdition);
             this.Controls.Add(this.lblPrice);
-            this.Controls.Add(this.lblGenre);
             this.Controls.Add(this.lblAuthor);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblCode);
@@ -300,6 +277,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminPanel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminPanel";
             this.Load += new System.EventHandler(this.AdminPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
@@ -317,7 +295,6 @@
         private System.Windows.Forms.Label lblCode;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblAuthor;
-        private System.Windows.Forms.Label lblGenre;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblEdition;
         private System.Windows.Forms.Label lblStock;
@@ -328,7 +305,6 @@
         private System.Windows.Forms.TextBox txtStockEntry;
         private System.Windows.Forms.TextBox txtEditionEntry;
         private System.Windows.Forms.TextBox txtPriceEntry;
-        private System.Windows.Forms.TextBox txtGenreEntry;
         private System.Windows.Forms.Label lblBookType;
         private System.Windows.Forms.ComboBox cboBookTypeSelector;
     }

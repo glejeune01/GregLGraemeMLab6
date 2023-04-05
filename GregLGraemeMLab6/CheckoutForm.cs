@@ -77,7 +77,30 @@ namespace GregLGraemeMLab6
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            //
+            string msgTitle = "Attention";
+            string msgText = "Would you like to complete your order?";
+
+            // Display a confirmation message box with "Yes" and "No" buttons.
+            DialogResult result = MessageBox.Show(msgText, msgTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // If the user clicked "Yes", remove the selected item from the list.
+            if (result == DialogResult.Yes)
+            {
+                
+                foreach (Book book in selectedBooks)
+                {
+                    // reduce the quantity of the book by 1
+                    book.Stock -= 1;
+                }
+
+                MessageBox.Show("Thank you for completing your order", "Order Completed");
+
+                // save the updated book list
+                FileHandler.ExportBooks(filePath: "C:\\files\\books.txt", Program.bookArray);
+                this.Close();
+                OrderForm orderForm = new OrderForm();
+                orderForm.ShowDialog();
+            }
         }
     }
 }

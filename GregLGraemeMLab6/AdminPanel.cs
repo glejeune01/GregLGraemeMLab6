@@ -175,8 +175,22 @@ namespace GregLGraemeMLab6
             {
                 // Update the books text file
                 string successTitle = "Success!";
-                string successMsg = "The Peoples Library has been updated.";
-                MessageBox.Show(successMsg, successTitle);
+                string successMsg = "The Peoples Library has been updated. Would you like to make another change?";
+                DialogResult dialogResult = MessageBox.Show(successMsg, successTitle, MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    // close the form and open a new instance of the AdminPanel
+                    this.Close();
+                    AdminPanel adminPanel = new AdminPanel();
+                    adminPanel.ShowDialog();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    // exit the application
+                    Application.Exit();
+                }
+
                 FileHandler.ExportBooks(filePath: "C:\\files\\books.txt", Program.bookArray);
             }
         }

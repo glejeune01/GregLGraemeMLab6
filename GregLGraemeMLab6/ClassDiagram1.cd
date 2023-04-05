@@ -31,7 +31,7 @@
   <Class Name="GregLGraemeMLab6.LoginForm" Collapsed="true">
     <Position X="6.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAACAAAAAAAACAAAACAAAECAAABgQAAAJAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAECAAABgQAAAJAAAA=</HashCode>
       <FileName>LoginForm.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -66,7 +66,7 @@
   <Class Name="GregLGraemeMLab6.AdminPanel">
     <Position X="12.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAARMAAgSKAAAIIUAACAABQCIAEAAACAAQAQAAKFQAg=</HashCode>
+      <HashCode>AAARMAAgSKAAAIIUAACAABQCIAEAAAAAAAAQAAKFQAg=</HashCode>
       <FileName>AdminPanel.cs</FileName>
     </TypeIdentifier>
   </Class>

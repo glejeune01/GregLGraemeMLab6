@@ -99,13 +99,20 @@ namespace GregLGraemeMLab6
                     }
                 }
 
-                MessageBox.Show("Thank you for completing your order", "Order Completed");
+                DialogResult dialogResult = MessageBox.Show("Thank you for completing your order. Would like to place another order?", "Order Completed", MessageBoxButtons.YesNo);
 
-                // save the updated book list
-                FileHandler.ExportBooks(filePath: "C:\\files\\books.txt", Program.bookArray);
-                this.Close();
-                OrderForm orderForm = new OrderForm();
-                orderForm.ShowDialog();
+                if (dialogResult == DialogResult.Yes)
+                {
+                    // close the form and open a new instance of the orderForm
+                    this.Close();
+                    OrderForm orderForm = new OrderForm();
+                    orderForm.ShowDialog();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    // exit the application
+                    Application.Exit();
+                }
             }
         }
     }

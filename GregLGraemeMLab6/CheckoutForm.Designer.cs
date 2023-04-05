@@ -66,7 +66,7 @@ namespace GregLGraemeMLab6
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 24);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Item(s) price:";
             // 
             // label3
@@ -77,7 +77,7 @@ namespace GregLGraemeMLab6
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 24);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Taxes:";
             // 
             // label4
@@ -88,7 +88,7 @@ namespace GregLGraemeMLab6
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(153, 24);
-            this.label4.TabIndex = 3;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Shipping costs:";
             // 
             // label5
@@ -99,7 +99,7 @@ namespace GregLGraemeMLab6
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(117, 24);
-            this.label5.TabIndex = 4;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Grand total:";
             // 
             // btnConfirm
@@ -109,7 +109,7 @@ namespace GregLGraemeMLab6
             this.btnConfirm.Location = new System.Drawing.Point(472, 567);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(149, 61);
-            this.btnConfirm.TabIndex = 5;
+            this.btnConfirm.TabIndex = 3;
             this.btnConfirm.Text = "&Confirm Order";
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
@@ -121,7 +121,7 @@ namespace GregLGraemeMLab6
             this.btnRemoveItem.Location = new System.Drawing.Point(269, 567);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.Size = new System.Drawing.Size(149, 61);
-            this.btnRemoveItem.TabIndex = 6;
+            this.btnRemoveItem.TabIndex = 2;
             this.btnRemoveItem.Text = "&Remove Item";
             this.btnRemoveItem.UseVisualStyleBackColor = false;
             this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
@@ -134,7 +134,7 @@ namespace GregLGraemeMLab6
             this.lstCheckout.Name = "lstCheckout";
             this.lstCheckout.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.lstCheckout.Size = new System.Drawing.Size(414, 158);
-            this.lstCheckout.TabIndex = 7;
+            this.lstCheckout.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -152,7 +152,7 @@ namespace GregLGraemeMLab6
             this.lblItemPricesTotals.Location = new System.Drawing.Point(207, 324);
             this.lblItemPricesTotals.Name = "lblItemPricesTotals";
             this.lblItemPricesTotals.Size = new System.Drawing.Size(127, 29);
-            this.lblItemPricesTotals.TabIndex = 13;
+            this.lblItemPricesTotals.TabIndex = 0;
             // 
             // lblTaxesTotals
             // 
@@ -161,7 +161,7 @@ namespace GregLGraemeMLab6
             this.lblTaxesTotals.Location = new System.Drawing.Point(207, 388);
             this.lblTaxesTotals.Name = "lblTaxesTotals";
             this.lblTaxesTotals.Size = new System.Drawing.Size(127, 29);
-            this.lblTaxesTotals.TabIndex = 14;
+            this.lblTaxesTotals.TabIndex = 0;
             // 
             // lblShippingTotals
             // 
@@ -170,7 +170,7 @@ namespace GregLGraemeMLab6
             this.lblShippingTotals.Location = new System.Drawing.Point(207, 452);
             this.lblShippingTotals.Name = "lblShippingTotals";
             this.lblShippingTotals.Size = new System.Drawing.Size(127, 29);
-            this.lblShippingTotals.TabIndex = 15;
+            this.lblShippingTotals.TabIndex = 0;
             // 
             // lblGrandTotals
             // 
@@ -179,7 +179,7 @@ namespace GregLGraemeMLab6
             this.lblGrandTotals.Location = new System.Drawing.Point(207, 516);
             this.lblGrandTotals.Name = "lblGrandTotals";
             this.lblGrandTotals.Size = new System.Drawing.Size(127, 29);
-            this.lblGrandTotals.TabIndex = 16;
+            this.lblGrandTotals.TabIndex = 0;
             // 
             // label6
             // 
@@ -189,7 +189,7 @@ namespace GregLGraemeMLab6
             this.label6.Location = new System.Drawing.Point(20, 46);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(293, 29);
-            this.label6.TabIndex = 17;
+            this.label6.TabIndex = 0;
             this.label6.Text = "Thank you for shopping!";
             // 
             // CheckoutForm

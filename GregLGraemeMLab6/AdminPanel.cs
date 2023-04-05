@@ -22,6 +22,7 @@ namespace GregLGraemeMLab6
         private void AdminPanel_Load(object sender, EventArgs e)
         {
             Program.bookArray = FileHandler.ImportBooks(filePath: "C:\\files\\books.txt");
+            lstAllTitles.Items.Clear();
             // Iterate through the bookArray and add each book to the appropriate listbox
             foreach (Book book in Program.bookArray)
             { 

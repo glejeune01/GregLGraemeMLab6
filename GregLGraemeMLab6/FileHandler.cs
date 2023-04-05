@@ -118,6 +118,7 @@ namespace GregLGraemeMLab6
             catch (ArgumentException ex)
             {
                 MessageBox.Show(ex.Message, "Error - no file");
+                Environment.Exit(1);
             }
             return userArray;
         }

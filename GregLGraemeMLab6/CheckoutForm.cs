@@ -86,16 +86,22 @@ namespace GregLGraemeMLab6
             // If the user clicked "Yes", lower stock if available.
             if (result == DialogResult.Yes)
             {
-                
-                foreach (Book book in selectedBooks)
+
+                for (int i = 0; i<selectedBooks.Count; i++)
                 {
                     // reduce the quantity of the book by 1
-                    book.Stock--;
+                    Book updatedBook = --selectedBooks[i];
 
-                    if (book.Stock < 1)
+                    if (updatedBook.Stock < 1)
                     {
-                        MessageBox.Show(book.Title + " is unavailable, we will continue to process the rest of your order!", "Book unavailable");
-                        book.Stock++;
+                        // The book is out of stock, remove it from the collection
+                        selectedBooks.RemoveAt(i);
+                        MessageBox.Show(updatedBook.Title + " is unavailable, we will continue to process the rest of your order!", "Book unavailable");
+                    }
+                    else
+                    {
+                        // The book is still in stock, replace the original book object with the updated book object
+                        selectedBooks[i] = updatedBook;
                     }
                 }
 
@@ -113,6 +119,19 @@ namespace GregLGraemeMLab6
                     // exit the application
                     Application.Exit();
                 }
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you'd like to cancel your order?", "Order Cancelled", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                // close the form and open a new instance of the orderForm
+                this.Close();
+                OrderForm orderForm = new OrderForm();
+                orderForm.ShowDialog();
             }
         }
     }

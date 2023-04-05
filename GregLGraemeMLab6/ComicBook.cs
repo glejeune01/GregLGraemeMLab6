@@ -1,14 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GregLGraemeMLab6;
+using System;
 
-namespace GregLGraemeMLab6
+public class ComicBook : Book, ICloneable
 {
-    public class ComicBook : Book
+    public string Edition { get; set; }
+
+    public object Clone()
     {
-        public string Edition { get; set; }
+        return new ComicBook
+        {
+            Code = this.Code,
+            Title = this.Title,
+            Author = this.Author,
+            Genre = this.Genre,
+            Price = this.Price,
+            Stock = this.Stock,
+            Edition = this.Edition + " (Part 2)"
+        };
     }
 }
-

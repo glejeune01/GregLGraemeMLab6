@@ -87,7 +87,6 @@ namespace GregLGraemeMLab6
                     {
                         lstAllTitles.Items.Add(book);
                     }
-
                 }
             }
             else

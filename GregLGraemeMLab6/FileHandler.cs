@@ -67,6 +67,17 @@ namespace GregLGraemeMLab6
                     Array.Resize(ref Program.bookArray, Program.bookArray.Length + 1);
                     Program.bookArray[Program.bookArray.Length - 1] = book;
                 }
+                foreach (Book book in Program.bookArray)
+                {
+                    if (book is ComicBook comicBook)
+                    {
+                        ComicBook clonedComicBook = (ComicBook)comicBook.Clone();
+                        Array.Resize(ref Program.bookArray, Program.bookArray.Length + 1);
+                        Program.bookArray[Program.bookArray.Length - 1] = clonedComicBook;
+                    }
+                }
+
+
                 return Program.bookArray;
             }
         }

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GregLGraemeMLab6.Book">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAEAEgAIgAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Books.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GregLGraemeMLab6.CheckoutForm">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAACACCEABgAAACAAAACBEAAiACAAAAQAABAAAA=</HashCode>
+      <FileName>CheckoutForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GregLGraemeMLab6.ComicBook">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>ComicBook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GregLGraemeMLab6.Fiction">
+    <Position X="2.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fiction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GregLGraemeMLab6.LoginForm" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAACAAAAAAAACAAAACAAAECAAABgQAAAJAAAA=</HashCode>
+      <FileName>LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GregLGraemeMLab6.NonFiction">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NonFiction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GregLGraemeMLab6.OrderForm">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoAAAAAASAgEBEIAACIAQACFAAAgIAACCUAAIJAACI=</HashCode>
+      <FileName>OrderForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GregLGraemeMLab6.Program">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAGAAAAAAAAAAAAEABAAAAEA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GregLGraemeMLab6.UserCreds">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAQAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>UserCreds.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GregLGraemeMLab6.AdminPanel">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAARMAAgSKAAAIIUAACAABQCIAEAAACAAQAQAAKFQAg=</HashCode>
+      <FileName>AdminPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

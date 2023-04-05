@@ -30,7 +30,5 @@ namespace GregLGraemeMLab6
                 throw new ArgumentException("File Path does not exist, please check if file is in C:/files");
             }
         }
-
-
     }
 }

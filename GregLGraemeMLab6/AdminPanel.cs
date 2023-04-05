@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Net.Http.Headers;
+using System.Collections;
 
 namespace GregLGraemeMLab6
 {
@@ -26,7 +29,7 @@ namespace GregLGraemeMLab6
             // Iterate through the bookArray and add each book to the appropriate listbox
             foreach (Book book in Program.bookArray)
             { 
-                lstAllTitles.Items.Add(book);
+                lstAllTitles.Items.Add(ToBook(book));
             }
         }
 
@@ -62,7 +65,7 @@ namespace GregLGraemeMLab6
                             comicBook.Price = Validation.IsDecimal(txtPriceEntry.Text);
                             comicBook.Stock = Validation.IsInteger(txtStockEntry.Text);
                             comicBook.Edition = txtEditionEntry.Text;
-                            lstAllTitles.Items[matchBookIndex] = ToBook(comicBook);
+                            lstAllTitles.Items[matchBookIndex] = (comicBook);
                             break;
                         case Fiction fictionBook:
                             fictionBook.Code = code;
@@ -70,7 +73,7 @@ namespace GregLGraemeMLab6
                             fictionBook.Author = txtAuthorEntry.Text;
                             fictionBook.Price = Validation.IsDecimal(txtPriceEntry.Text);
                             fictionBook.Stock = Validation.IsInteger(txtStockEntry.Text);
-                            lstAllTitles.Items[matchBookIndex] = ToBook(fictionBook);
+                            lstAllTitles.Items[matchBookIndex] = (fictionBook);
                             break;
                         case NonFiction nonFictionBook:
                             nonFictionBook.Code = code;
@@ -78,7 +81,7 @@ namespace GregLGraemeMLab6
                             nonFictionBook.Author = txtAuthorEntry.Text;
                             nonFictionBook.Price = Validation.IsDecimal(txtPriceEntry.Text);
                             nonFictionBook.Stock = Validation.IsInteger(txtStockEntry.Text);
-                            lstAllTitles.Items[matchBookIndex] = ToBook(nonFictionBook);
+                            lstAllTitles.Items[matchBookIndex] = (nonFictionBook);
                             break;
                     }
                     MessageBox.Show($"The book with code {code} has been updated.", "Book Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -86,7 +89,7 @@ namespace GregLGraemeMLab6
 
                     foreach (Book book in Program.bookArray)
                     {
-                        lstAllTitles.Items.Add(book);
+                        lstAllTitles.Items.Add(ToBook(book));
                     }
                 }
             }
@@ -100,7 +103,7 @@ namespace GregLGraemeMLab6
 
                 foreach (Book book in Program.bookArray)
                 {
-                    lstAllTitles.Items.Add(book);
+                    lstAllTitles.Items.Add(ToBook(book));
                 }
             }
 
@@ -178,14 +181,7 @@ namespace GregLGraemeMLab6
                 string successMsg = "The Peoples Library has been updated. Would you like to make another change?";
                 DialogResult dialogResult = MessageBox.Show(successMsg, successTitle, MessageBoxButtons.YesNo);
 
-                if (dialogResult == DialogResult.Yes)
-                {
-                    // close the form and open a new instance of the AdminPanel
-                    this.Close();
-                    AdminPanel adminPanel = new AdminPanel();
-                    adminPanel.ShowDialog();
-                }
-                else if (dialogResult == DialogResult.No)
+                if (dialogResult == DialogResult.No)
                 {
                     // exit the application
                     Application.Exit();
@@ -194,7 +190,6 @@ namespace GregLGraemeMLab6
                 FileHandler.ExportBooks(filePath: "C:\\files\\books.txt", Program.bookArray);
             }
         }
-
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
@@ -208,10 +203,8 @@ namespace GregLGraemeMLab6
             }
 
             // Get the selected book from the list box
-            Book selectedBook = lstAllTitles.SelectedItem as Book;
-
-            // Find its index in the array
-            int index = Array.IndexOf(Program.bookArray, selectedBook);
+            int index = lstAllTitles.SelectedIndex;
+            Book selectedBook = Program.bookArray[index];
 
             // Show a message box to confirm deletion
             string title2 = "Attention!";
@@ -223,12 +216,12 @@ namespace GregLGraemeMLab6
             {
                 if (index >= 0)
                 {
+                    // Remove the book from the list box
+                    lstAllTitles.Items.Remove(selectedBook);
+
                     // Remove the book from the array
                     Array.Copy(Program.bookArray, index + 1, Program.bookArray, index, Program.bookArray.Length - index - 1);
                     Array.Resize(ref Program.bookArray, Program.bookArray.Length - 1);
-
-                    // Remove the book from the list box
-                    lstAllTitles.Items.Remove(selectedBook);
 
                     // Update the list box
                     lstAllTitles.Items.Clear();
@@ -238,12 +231,7 @@ namespace GregLGraemeMLab6
                     }
                 }
             }
-        }
-        private string ToBook(Book book)
-        {
-            string formattedBook = $"{book.Title} by {book.Author}, {book.Price:C}, Stock: {book.Stock}";
 
-            return formattedBook;
         }
 
         private void lstAllTitles_SelectedIndexChanged(object sender, EventArgs e)
@@ -252,7 +240,8 @@ namespace GregLGraemeMLab6
             {
                 txtEditionEntry.Enabled = true;
                 txtEditionEntry.BackColor = Color.White;
-                Book selectedBook = lstAllTitles.SelectedItem as Book;
+                int index = lstAllTitles.SelectedIndex;
+                Book selectedBook = Program.bookArray[index];
                 cboBookTypeSelector.Text = selectedBook.Genre;
                 txtCodeEntry.Text = selectedBook.Code.ToString();
                 txtTitleEntry.Text = selectedBook.Title;
@@ -271,6 +260,20 @@ namespace GregLGraemeMLab6
                 }
             }
         }
+        private string ToBook(Book book)
+        {
+            string formattedBook = $"{book.Title} by {book.Author}";
+            formattedBook = formattedBook.PadRight(60);
+            formattedBook += $"{book.Price:C}";
+            formattedBook = formattedBook.PadRight(70);
+            formattedBook += $"Stock: { book.Stock,1}";
+            
+
+
+
+            return formattedBook;
+        }
+
         private bool AreAllFieldsFilledOut()
         {
             foreach (Control control in this.Controls)

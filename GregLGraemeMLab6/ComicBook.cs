@@ -9,7 +9,7 @@ public class ComicBook : Book, ICloneable
     {
         return new ComicBook
         {
-            Code = this.Code,
+            Code = this.Code+10000,
             Title = this.Title,
             Author = this.Author,
             Genre = this.Genre,

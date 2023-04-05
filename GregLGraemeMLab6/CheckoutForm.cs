@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GregLGraemeMLab6
@@ -29,12 +23,12 @@ namespace GregLGraemeMLab6
         private void Calculations()
         {
             decimal price = 0;
-            decimal taxes,shippingCost,grandTotal;
+            decimal taxes, shippingCost, grandTotal;
             int items = 0;
 
-            foreach (Book book in selectedBooks) 
-            { 
-                price+=book.Price;
+            foreach (Book book in selectedBooks)
+            {
+                price += book.Price;
                 items++;
             }
             taxes = price * 0.15m;
@@ -42,7 +36,7 @@ namespace GregLGraemeMLab6
             grandTotal = taxes + shippingCost + price;
 
             lblItemPricesTotals.Text = price.ToString("C");
-            lblTaxesTotals.Text = taxes.ToString("C");  
+            lblTaxesTotals.Text = taxes.ToString("C");
             lblShippingTotals.Text = shippingCost.ToString("C");
             lblGrandTotals.Text = grandTotal.ToString("C");
         }
@@ -54,7 +48,7 @@ namespace GregLGraemeMLab6
 
         private void btnRemoveItem_Click(object sender, EventArgs e)
         {
-            
+
             if (lstCheckout.SelectedIndex >= 0)
             {
                 string msgTitle = "Attention";
@@ -74,7 +68,7 @@ namespace GregLGraemeMLab6
                 }
             }
         }
-        
+
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             string msgTitle = "Attention";
@@ -87,7 +81,7 @@ namespace GregLGraemeMLab6
             if (result == DialogResult.Yes)
             {
 
-                for (int i = 0; i<selectedBooks.Count; i++)
+                for (int i = 0; i < selectedBooks.Count; i++)
                 {
                     // reduce the quantity of the book by 1
                     Book updatedBook = --selectedBooks[i];
@@ -103,14 +97,16 @@ namespace GregLGraemeMLab6
                         // The book is still in stock, replace the original book object with the updated book object
                         selectedBooks[i] = updatedBook;
                     }
+
                 }
 
+                FileHandler.ExportBooks(filePath: "C:\\files\\books.txt", Program.bookArray);
                 DialogResult dialogResult = MessageBox.Show("Thank you for completing your order. Would like to place another order?", "Order Completed", MessageBoxButtons.YesNo);
 
                 if (dialogResult == DialogResult.Yes)
                 {
                     // close the form and open a new instance of the orderForm
-                    this.Close();
+                    this.Hide();
                     OrderForm orderForm = new OrderForm();
                     orderForm.ShowDialog();
                 }
@@ -132,6 +128,23 @@ namespace GregLGraemeMLab6
                 this.Close();
                 OrderForm orderForm = new OrderForm();
                 orderForm.ShowDialog();
+            }
+        }
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to exit the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+                else
+                {
+                    e.Cancel = false;
+                    Application.Exit();
+                }
             }
         }
     }

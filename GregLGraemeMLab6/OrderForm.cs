@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GregLGraemeMLab6
@@ -20,21 +16,27 @@ namespace GregLGraemeMLab6
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Program.bookArray = new Book[0];
             Program.bookArray = FileHandler.ImportBooks(filePath: "C:\\files\\books.txt");
-            // Iterate through the bookArray and add each book to the appropriate listbox
-            foreach (Book book in Program.bookArray)
+            lstFiction.Items.Clear();
+            lstComicBooks.Items.Clear();
+            lstNonFiction.Items.Clear();
             {
-                if (book is Fiction)
+                // Iterate through the bookArray and add each book to the appropriate listbox
+                foreach (Book book in Program.bookArray)
                 {
-                    lstFiction.Items.Add(book);
-                }
-                else if (book is NonFiction)
-                {
-                    lstNonFiction.Items.Add(book);
-                }
-                else if (book is ComicBook)
-                {
-                    lstComicBooks.Items.Add(book);
+                    if (book is Fiction)
+                    {
+                        lstFiction.Items.Add(book);
+                    }
+                    else if (book is NonFiction)
+                    {
+                        lstNonFiction.Items.Add(book);
+                    }
+                    else if (book is ComicBook)
+                    {
+                        lstComicBooks.Items.Add(book);
+                    }
                 }
             }
         }
@@ -118,6 +120,23 @@ namespace GregLGraemeMLab6
             {
                 lstFiction.ClearSelected();
                 lstNonFiction.ClearSelected();
+            }
+        }
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to exit the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+                else
+                {
+                    e.Cancel = false;
+                    Application.Exit();
+                }
             }
         }
     }

@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace GregLGraemeMLab6
 {
@@ -35,14 +30,14 @@ namespace GregLGraemeMLab6
         {
             int result;
             int.TryParse(value, out result);
-                return result;
+            return result;
         }
 
         public static decimal IsDecimal(string value)
         {
             decimal result;
             decimal.TryParse(value, out result);
-                return result;
+            return result;
         }
     }
 }

@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using System.Net.Http.Headers;
-using System.Collections;
 
 namespace GregLGraemeMLab6
 {
@@ -28,7 +18,7 @@ namespace GregLGraemeMLab6
             lstAllTitles.Items.Clear();
             // Iterate through the bookArray and add each book to the appropriate listbox
             foreach (Book book in Program.bookArray)
-            { 
+            {
                 lstAllTitles.Items.Add(ToBook(book));
             }
         }
@@ -266,8 +256,8 @@ namespace GregLGraemeMLab6
             formattedBook = formattedBook.PadRight(60);
             formattedBook += $"{book.Price:C}";
             formattedBook = formattedBook.PadRight(70);
-            formattedBook += $"Stock: { book.Stock,1}";
-            
+            formattedBook += $"Stock: {book.Stock,1}";
+
 
 
 
@@ -293,6 +283,23 @@ namespace GregLGraemeMLab6
                 }
             }
             return true;
+        }
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to exit the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+                else
+                {
+                    e.Cancel = false;
+                    Application.Exit();
+                }
+            }
         }
     }
 }

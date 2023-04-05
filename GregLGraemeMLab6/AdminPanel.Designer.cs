@@ -54,16 +54,17 @@
             // lstAllTitles
             // 
             this.lstAllTitles.FormattingEnabled = true;
-            this.lstAllTitles.ItemHeight = 17;
+            this.lstAllTitles.ItemHeight = 37;
             this.lstAllTitles.Location = new System.Drawing.Point(428, 171);
             this.lstAllTitles.Margin = new System.Windows.Forms.Padding(4);
             this.lstAllTitles.Name = "lstAllTitles";
-            this.lstAllTitles.Size = new System.Drawing.Size(751, 395);
+            this.lstAllTitles.Size = new System.Drawing.Size(751, 374);
             this.lstAllTitles.TabIndex = 8;
             this.lstAllTitles.SelectedIndexChanged += new System.EventHandler(this.lstAllTitles_SelectedIndexChanged);
             // 
             // btnAddEdit
             // 
+            this.btnAddEdit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAddEdit.Location = new System.Drawing.Point(245, 517);
             this.btnAddEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddEdit.Name = "btnAddEdit";
@@ -103,7 +104,7 @@
             this.lblCode.Location = new System.Drawing.Point(13, 245);
             this.lblCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(44, 17);
+            this.lblCode.Size = new System.Drawing.Size(97, 37);
             this.lblCode.TabIndex = 1;
             this.lblCode.Text = "Code";
             // 
@@ -115,7 +116,7 @@
             this.lblTitle.Location = new System.Drawing.Point(13, 290);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(53, 17);
+            this.lblTitle.Size = new System.Drawing.Size(117, 37);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "Title";
             // 
@@ -127,7 +128,7 @@
             this.lblAuthor.Location = new System.Drawing.Point(13, 335);
             this.lblAuthor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(62, 17);
+            this.lblAuthor.Size = new System.Drawing.Size(137, 37);
             this.lblAuthor.TabIndex = 3;
             this.lblAuthor.Text = "Author";
             // 
@@ -139,7 +140,7 @@
             this.lblPrice.Location = new System.Drawing.Point(13, 380);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(53, 17);
+            this.lblPrice.Size = new System.Drawing.Size(117, 37);
             this.lblPrice.TabIndex = 4;
             this.lblPrice.Text = "Price";
             // 
@@ -151,7 +152,7 @@
             this.lblEdition.Location = new System.Drawing.Point(13, 425);
             this.lblEdition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEdition.Name = "lblEdition";
-            this.lblEdition.Size = new System.Drawing.Size(71, 17);
+            this.lblEdition.Size = new System.Drawing.Size(157, 37);
             this.lblEdition.TabIndex = 5;
             this.lblEdition.Text = "Edition";
             // 
@@ -163,7 +164,7 @@
             this.lblStock.Location = new System.Drawing.Point(13, 470);
             this.lblStock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(53, 17);
+            this.lblStock.Size = new System.Drawing.Size(117, 37);
             this.lblStock.TabIndex = 6;
             this.lblStock.Text = "Stock";
             // 
@@ -182,7 +183,7 @@
             this.txtCodeEntry.Location = new System.Drawing.Point(127, 242);
             this.txtCodeEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodeEntry.Name = "txtCodeEntry";
-            this.txtCodeEntry.Size = new System.Drawing.Size(230, 24);
+            this.txtCodeEntry.Size = new System.Drawing.Size(230, 46);
             this.txtCodeEntry.TabIndex = 1;
             // 
             // txtTitleEntry
@@ -190,7 +191,7 @@
             this.txtTitleEntry.Location = new System.Drawing.Point(127, 287);
             this.txtTitleEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitleEntry.Name = "txtTitleEntry";
-            this.txtTitleEntry.Size = new System.Drawing.Size(230, 24);
+            this.txtTitleEntry.Size = new System.Drawing.Size(230, 46);
             this.txtTitleEntry.TabIndex = 2;
             // 
             // txtAuthorEntry
@@ -198,7 +199,7 @@
             this.txtAuthorEntry.Location = new System.Drawing.Point(127, 332);
             this.txtAuthorEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtAuthorEntry.Name = "txtAuthorEntry";
-            this.txtAuthorEntry.Size = new System.Drawing.Size(230, 24);
+            this.txtAuthorEntry.Size = new System.Drawing.Size(230, 46);
             this.txtAuthorEntry.TabIndex = 3;
             // 
             // txtStockEntry
@@ -206,7 +207,7 @@
             this.txtStockEntry.Location = new System.Drawing.Point(127, 467);
             this.txtStockEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtStockEntry.Name = "txtStockEntry";
-            this.txtStockEntry.Size = new System.Drawing.Size(230, 24);
+            this.txtStockEntry.Size = new System.Drawing.Size(230, 46);
             this.txtStockEntry.TabIndex = 6;
             // 
             // txtEditionEntry
@@ -214,7 +215,7 @@
             this.txtEditionEntry.Location = new System.Drawing.Point(127, 422);
             this.txtEditionEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtEditionEntry.Name = "txtEditionEntry";
-            this.txtEditionEntry.Size = new System.Drawing.Size(230, 24);
+            this.txtEditionEntry.Size = new System.Drawing.Size(230, 46);
             this.txtEditionEntry.TabIndex = 5;
             // 
             // txtPriceEntry
@@ -222,7 +223,7 @@
             this.txtPriceEntry.Location = new System.Drawing.Point(127, 377);
             this.txtPriceEntry.Margin = new System.Windows.Forms.Padding(4);
             this.txtPriceEntry.Name = "txtPriceEntry";
-            this.txtPriceEntry.Size = new System.Drawing.Size(230, 24);
+            this.txtPriceEntry.Size = new System.Drawing.Size(230, 46);
             this.txtPriceEntry.TabIndex = 4;
             // 
             // lblBookType
@@ -233,7 +234,7 @@
             this.lblBookType.Location = new System.Drawing.Point(13, 171);
             this.lblBookType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBookType.Name = "lblBookType";
-            this.lblBookType.Size = new System.Drawing.Size(89, 17);
+            this.lblBookType.Size = new System.Drawing.Size(197, 37);
             this.lblBookType.TabIndex = 0;
             this.lblBookType.Text = "Book Type";
             // 
@@ -246,12 +247,12 @@
             "Comic Book"});
             this.cboBookTypeSelector.Location = new System.Drawing.Point(127, 171);
             this.cboBookTypeSelector.Name = "cboBookTypeSelector";
-            this.cboBookTypeSelector.Size = new System.Drawing.Size(230, 25);
+            this.cboBookTypeSelector.Size = new System.Drawing.Size(230, 45);
             this.cboBookTypeSelector.TabIndex = 0;
             // 
             // AdminPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1216, 720);
@@ -279,6 +280,7 @@
             this.Name = "AdminPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminPanel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.AdminPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);

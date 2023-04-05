@@ -55,7 +55,7 @@ namespace GregLGraemeMLab6
             this.label1.Location = new System.Drawing.Point(21, 149);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 18);
+            this.label1.Size = new System.Drawing.Size(135, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Item(s):";
             // 
@@ -66,7 +66,7 @@ namespace GregLGraemeMLab6
             this.label2.Location = new System.Drawing.Point(21, 329);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 18);
+            this.label2.Size = new System.Drawing.Size(221, 38);
             this.label2.TabIndex = 0;
             this.label2.Text = "Item(s) price:";
             // 
@@ -77,7 +77,7 @@ namespace GregLGraemeMLab6
             this.label3.Location = new System.Drawing.Point(21, 393);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 18);
+            this.label3.Size = new System.Drawing.Size(122, 38);
             this.label3.TabIndex = 0;
             this.label3.Text = "Taxes:";
             // 
@@ -88,7 +88,7 @@ namespace GregLGraemeMLab6
             this.label4.Location = new System.Drawing.Point(21, 457);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 18);
+            this.label4.Size = new System.Drawing.Size(254, 38);
             this.label4.TabIndex = 0;
             this.label4.Text = "Shipping costs:";
             // 
@@ -99,7 +99,7 @@ namespace GregLGraemeMLab6
             this.label5.Location = new System.Drawing.Point(21, 521);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 18);
+            this.label5.Size = new System.Drawing.Size(199, 38);
             this.label5.TabIndex = 0;
             this.label5.Text = "Grand total:";
             // 
@@ -130,11 +130,11 @@ namespace GregLGraemeMLab6
             // lstCheckout
             // 
             this.lstCheckout.FormattingEnabled = true;
-            this.lstCheckout.ItemHeight = 17;
+            this.lstCheckout.ItemHeight = 37;
             this.lstCheckout.Location = new System.Drawing.Point(207, 121);
             this.lstCheckout.Name = "lstCheckout";
             this.lstCheckout.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.lstCheckout.Size = new System.Drawing.Size(414, 157);
+            this.lstCheckout.Size = new System.Drawing.Size(414, 152);
             this.lstCheckout.TabIndex = 1;
             // 
             // pictureBox1
@@ -189,7 +189,7 @@ namespace GregLGraemeMLab6
             this.label6.ForeColor = System.Drawing.Color.IndianRed;
             this.label6.Location = new System.Drawing.Point(20, 46);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(237, 24);
+            this.label6.Size = new System.Drawing.Size(489, 48);
             this.label6.TabIndex = 0;
             this.label6.Text = "Thank you for shopping!";
             // 
@@ -207,7 +207,7 @@ namespace GregLGraemeMLab6
             // 
             // CheckoutForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(633, 640);
@@ -231,6 +231,7 @@ namespace GregLGraemeMLab6
             this.Name = "CheckoutForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CheckoutForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.CheckoutForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

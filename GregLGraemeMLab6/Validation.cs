@@ -22,7 +22,7 @@ namespace GregLGraemeMLab6
             }
         }
 
-        public static void ValidateFileExtension(string filePath)
+        public static void ValidateFile(string filePath)
         {
             // Check if the file path exists
             if (!File.Exists(filePath))

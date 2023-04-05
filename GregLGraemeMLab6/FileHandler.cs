@@ -15,7 +15,7 @@ namespace GregLGraemeMLab6
         {
             try
             {
-                Validation.ValidateFileExtension(filePath);
+                Validation.ValidateFile(filePath);
             }
             catch (ArgumentException ex)
             {
@@ -77,7 +77,7 @@ namespace GregLGraemeMLab6
             UserCreds[] userArray = new UserCreds[0];
             try
             {
-                Validation.ValidateFileExtension(filePath);
+                Validation.ValidateFile(filePath);
                 using (StreamReader reader = new StreamReader(filePath))
                 {
                     // Read each line of the file and create a book instance for each line
@@ -117,7 +117,7 @@ namespace GregLGraemeMLab6
         {
             try
             {
-                Validation.ValidateFileExtension(filePath);
+                Validation.ValidateFile(filePath);
 
                 //Clear contents of file
                 File.WriteAllText(filePath, string.Empty);

@@ -33,7 +33,7 @@ namespace GregLGraemeMLab6
         {
             lstAllTitles.SelectedIndexChanged -= lstAllTitles_SelectedIndexChanged;
 
-            int code = int.Parse(txtCodeEntry.Text);
+            int code = Validation.IsInteger(txtCodeEntry.Text);
             bool bookFinder = Program.bookArray.Any(book => book.Code == code);
             bool allInfo = AreAllFieldsFilledOut();
 
@@ -58,8 +58,8 @@ namespace GregLGraemeMLab6
                             comicBook.Code = code;
                             comicBook.Title = txtTitleEntry.Text;
                             comicBook.Author = txtAuthorEntry.Text;
-                            comicBook.Price = decimal.Parse(txtPriceEntry.Text);
-                            comicBook.Stock = int.Parse(txtStockEntry.Text);
+                            comicBook.Price = Validation.IsDecimal(txtPriceEntry.Text);
+                            comicBook.Stock = Validation.IsInteger(txtStockEntry.Text);
                             comicBook.Edition = txtEditionEntry.Text;
                             lstAllTitles.Items[matchBookIndex] = ToBook(comicBook);
                             break;
@@ -67,16 +67,16 @@ namespace GregLGraemeMLab6
                             fictionBook.Code = code;
                             fictionBook.Title = txtTitleEntry.Text;
                             fictionBook.Author = txtAuthorEntry.Text;
-                            fictionBook.Price = decimal.Parse(txtPriceEntry.Text);
-                            fictionBook.Stock = int.Parse(txtStockEntry.Text);
+                            fictionBook.Price = Validation.IsDecimal(txtPriceEntry.Text);
+                            fictionBook.Stock = Validation.IsInteger(txtStockEntry.Text);
                             lstAllTitles.Items[matchBookIndex] = ToBook(fictionBook);
                             break;
                         case NonFiction nonFictionBook:
                             nonFictionBook.Code = code;
                             nonFictionBook.Title = txtTitleEntry.Text;
                             nonFictionBook.Author = txtAuthorEntry.Text;
-                            nonFictionBook.Price = decimal.Parse(txtPriceEntry.Text);
-                            nonFictionBook.Stock = int.Parse(txtStockEntry.Text);
+                            nonFictionBook.Price = Validation.IsDecimal(txtPriceEntry.Text);
+                            nonFictionBook.Stock = Validation.IsInteger(txtStockEntry.Text);
                             lstAllTitles.Items[matchBookIndex] = ToBook(nonFictionBook);
                             break;
                     }
@@ -111,11 +111,11 @@ namespace GregLGraemeMLab6
         {
             Book newBook = null;
 
-            int code = int.Parse(txtCodeEntry.Text);
+            int code = Validation.IsInteger(txtCodeEntry.Text);
             string title = txtTitleEntry.Text;
             string author = txtAuthorEntry.Text;
-            decimal price = decimal.Parse(txtPriceEntry.Text);
-            int stock = int.Parse(txtStockEntry.Text);
+            decimal price = Validation.IsDecimal(txtPriceEntry.Text);
+            int stock = Validation.IsInteger(txtStockEntry.Text);
 
             switch (cboBookTypeSelector.Text)
             {

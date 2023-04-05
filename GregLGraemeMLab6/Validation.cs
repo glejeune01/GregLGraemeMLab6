@@ -30,5 +30,19 @@ namespace GregLGraemeMLab6
                 throw new ArgumentException("File Path does not exist, please check if file is in C:/files");
             }
         }
+
+        public static int IsInteger(string value)
+        {
+            int result;
+            int.TryParse(value, out result);
+                return result;
+        }
+
+        public static decimal IsDecimal(string value)
+        {
+            decimal result;
+            decimal.TryParse(value, out result);
+                return result;
+        }
     }
 }

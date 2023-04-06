@@ -38,8 +38,8 @@ namespace GregLGraemeMLab6
                     {
                         MessageBox.Show("Login successful!");
                         AdminPanel adminPanel = new AdminPanel();
-                        this.Hide(); // hide the LoginForm
-                        adminPanel.ShowDialog();
+                        this.Hide();
+                        adminPanel.Show();
                         return;
                     }
                 }

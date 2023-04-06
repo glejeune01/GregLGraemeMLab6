@@ -96,10 +96,9 @@ namespace GregLGraemeMLab6
                     lstAllTitles.Items.Add(ToBook(book));
                 }
             }
-
             lstAllTitles.SelectedIndexChanged += lstAllTitles_SelectedIndexChanged;
         }
-
+    
 
         private Book CreateNewBook()
         {
@@ -113,7 +112,7 @@ namespace GregLGraemeMLab6
 
             switch (cboBookTypeSelector.Text)
             {
-                case "ComicBook":
+                case "Comic Book":
                     string edition = txtEditionEntry.Text;
                     newBook = new ComicBook
                     {
@@ -139,7 +138,7 @@ namespace GregLGraemeMLab6
                     };
                     break;
 
-                case "NonFiction":
+                case "Non Fiction":
                     newBook = new NonFiction
                     {
                         Code = code,

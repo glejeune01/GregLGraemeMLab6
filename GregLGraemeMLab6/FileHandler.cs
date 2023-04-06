@@ -15,6 +15,7 @@ namespace GregLGraemeMLab6
             catch (ArgumentException ex)
             {
                 MessageBox.Show(ex.Message, "Error - Import Failed");
+                Environment.Exit(1);
 
                 return null;
             }
@@ -151,6 +152,7 @@ namespace GregLGraemeMLab6
             catch (ArgumentException ex)
             {
                 MessageBox.Show(ex.Message, "Error - Export Failed");
+                Environment.Exit(1);
             }
         }
 

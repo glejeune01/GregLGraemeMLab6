@@ -7,6 +7,7 @@ namespace GregLGraemeMLab6
     {
         public bool ValidateCredentials(UserCreds user, string enteredUsername, string enteredPassword)
         {
+            //validates that username/pw match what's on file
             if (user.Username == enteredUsername && user.Password == enteredPassword)
             {
                 return true;
@@ -28,6 +29,7 @@ namespace GregLGraemeMLab6
 
         public static int IsInteger(string value)
         {
+            //validating entry is an int
             int result;
             int.TryParse(value, out result);
             return result;
@@ -35,6 +37,7 @@ namespace GregLGraemeMLab6
 
         public static decimal IsDecimal(string value)
         {
+            //validating that entry is a decimal
             decimal result;
             decimal.TryParse(value, out result);
             return result;

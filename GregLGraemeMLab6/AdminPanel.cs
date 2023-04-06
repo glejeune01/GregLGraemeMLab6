@@ -11,7 +11,7 @@ namespace GregLGraemeMLab6
         {
             InitializeComponent();
         }
-
+        //Loading the Admin Panel, importing the books file clearing the listbok
         private void AdminPanel_Load(object sender, EventArgs e)
         {
             Program.bookArray = FileHandler.ImportBooks(filePath: "C:\\files\\books.txt");
@@ -22,13 +22,15 @@ namespace GregLGraemeMLab6
                 lstAllTitles.Items.Add(ToBook(book));
             }
         }
-
+        /
         private void BtnAddEdit_Click(object sender, EventArgs e)
         {
+            //Temporarily disabling the selected index change event so we can add/edit without issues. 
             lstAllTitles.SelectedIndexChanged -= lstAllTitles_SelectedIndexChanged;
 
             int code = Validation.IsInteger(txtCodeEntry.Text);
             bool bookFinder = Program.bookArray.Any(book => book.Code == code);
+            //Ensuring all fields are filled out, dynamically based on the book type
             bool allInfo = AreAllFieldsFilledOut();
 
             if (!allInfo)
@@ -39,6 +41,7 @@ namespace GregLGraemeMLab6
 
             if (bookFinder)
             {
+                //If a matching book is found we change the array book item to match the users entry
                 DialogResult result = MessageBox.Show($"A book with code {code} already exists. Would you like to edit the existing book?", "Duplicate Code", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
@@ -85,6 +88,7 @@ namespace GregLGraemeMLab6
             }
             else
             {
+                //IF code doesn't match, we're going to create a new book!
                 Book newBook = CreateNewBook();
                 Array.Resize(ref Program.bookArray, Program.bookArray.Length + 1);
                 Program.bookArray[Program.bookArray.Length - 1] = newBook;
@@ -102,6 +106,7 @@ namespace GregLGraemeMLab6
 
         private Book CreateNewBook()
         {
+            //Creating a new book by validating all the user entry, and creating a new book based on the book type selected
             Book newBook = null;
 
             int code = Validation.IsInteger(txtCodeEntry.Text);
@@ -225,6 +230,7 @@ namespace GregLGraemeMLab6
 
         private void lstAllTitles_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //When we change the selected item in the listbox, we want to display different information to the user
             if (lstAllTitles.SelectedItems.Count == 1)
             {
                 txtEditionEntry.Enabled = true;
@@ -251,6 +257,7 @@ namespace GregLGraemeMLab6
         }
         private string ToBook(Book book)
         {
+            //Formatting the string for display purposes. It's different then the string we've made for our other screens
             string formattedBook = $"{book.Title} by {book.Author}";
             formattedBook = formattedBook.PadRight(60);
             formattedBook += $"{book.Price:C}";
@@ -265,6 +272,7 @@ namespace GregLGraemeMLab6
 
         private bool AreAllFieldsFilledOut()
         {
+            //Validates that each control has details in it 
             foreach (Control control in this.Controls)
             {
                 if (control is TextBox textBox && string.IsNullOrEmpty(textBox.Text))
@@ -285,6 +293,7 @@ namespace GregLGraemeMLab6
         }
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            //Closes the application when needed and asks the user if they want to close it.
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 DialogResult result = MessageBox.Show("Are you sure you want to exit the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

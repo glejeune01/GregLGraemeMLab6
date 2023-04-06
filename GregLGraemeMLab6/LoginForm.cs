@@ -23,7 +23,7 @@ namespace GregLGraemeMLab6
             Program.userArray = FileHandler.ImportUsers(filePath: "C:\\files\\Users.txt");
         }
 
-        //Logging the user in, creates two new user objects and compares against entry from user
+        //Logging the user in after validating that the userfile has matching user/pw info to what's on file
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsernameEntry.Text;
@@ -58,6 +58,5 @@ namespace GregLGraemeMLab6
 
             MessageBox.Show("Invalid username or password.");
         }
-            //Validates the username and password
     }
 }

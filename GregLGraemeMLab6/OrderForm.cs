@@ -43,11 +43,12 @@ namespace GregLGraemeMLab6
 
         private void BtnCheckOut_Click(object sender, EventArgs e)
         {
+            //opens checkout form passing in the selected books
             this.Hide();
             CheckoutForm checkoutForm = new CheckoutForm(selectedBooks);
             checkoutForm.ShowDialog();
         }
-
+        //filters the lstbox according to what lstbox text changed
         private void TxtNonFictionSearch_TextChanged(object sender, EventArgs e)
         {
             FilterListbox(lstNonFiction, txtNonFictionSearch.Text, typeof(NonFiction));
@@ -65,6 +66,7 @@ namespace GregLGraemeMLab6
 
         private void FilterListbox(ListBox listBox, string searchText, Type bookType)
         {
+            //implements the filter for the listbox searches.
             listBox.Items.Clear();
 
             IEnumerable<Book> booksOfType = Program.bookArray.Where(b => b.GetType() == bookType);
@@ -79,7 +81,7 @@ namespace GregLGraemeMLab6
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
-        {
+        {//adds a book to the selectedbook array for later usage
             string msgTitle = "Attention!";
             string success = "Success!";
             Book selectedBook = lstFiction.SelectedItem as Book
@@ -96,6 +98,7 @@ namespace GregLGraemeMLab6
                 MessageBox.Show("Please select a book to add to your cart.", msgTitle);
             }
         }
+        //when selected index is changed in one list box, deselects all the others.
         private void lstNonFiction_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstNonFiction.SelectedIndex != -1)
@@ -124,6 +127,7 @@ namespace GregLGraemeMLab6
         }
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            //closes application when needed
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 DialogResult result = MessageBox.Show("Are you sure you want to exit the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

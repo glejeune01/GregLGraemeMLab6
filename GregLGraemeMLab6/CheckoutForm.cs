@@ -6,10 +6,12 @@ namespace GregLGraemeMLab6
 {
     public partial class CheckoutForm : Form
     {
+        //creating an empty array of books for the selected books
         public List<Book> selectedBooks;
 
         public CheckoutForm(List<Book> selectedBooks)
         {
+            //populating the array of books with the selected books. 
             InitializeComponent();
             lstCheckout.SelectionMode = SelectionMode.One;
             this.selectedBooks = selectedBooks;
@@ -22,6 +24,7 @@ namespace GregLGraemeMLab6
 
         private void Calculations()
         {
+            //calculating our prices, taxes, shipping costs
             decimal price = 0;
             decimal taxes, shippingCost, grandTotal;
             int items = 0;
@@ -48,7 +51,6 @@ namespace GregLGraemeMLab6
 
         private void btnRemoveItem_Click(object sender, EventArgs e)
         {
-
             if (lstCheckout.SelectedIndex >= 0)
             {
                 string msgTitle = "Attention";
@@ -132,6 +134,7 @@ namespace GregLGraemeMLab6
         }
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            //closing our form when x is clicked
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 DialogResult result = MessageBox.Show("Are you sure you want to exit the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
